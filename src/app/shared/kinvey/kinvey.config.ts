@@ -11,17 +11,8 @@ export class KinveyConfig {
     private _AUTHORIZATION_HEADER_NAME = 'Authorization';
     private _AUTHORIZATION_TYPE = 'Basic';
     private _BASE_URL = 'https://baas.kinvey.com/';
-    private _COLLECTIONS_URL = `${this._BASE_URL}appdata/${this.APP_ID}/`;
-
-    public AUTH_HEADER_COMMON = {
-        name: this._AUTHORIZATION_HEADER_NAME,
-        value: `${this._AUTHORIZATION_TYPE} ${this._AUTH_STRING_COMMON}`
-    };
-
-    public AUTH_HEADER_USERS = {
-        name: this._AUTHORIZATION_HEADER_NAME,
-        value: `${this._AUTHORIZATION_TYPE} ${this._AUTH_STRING_USERS}`
-    };
+    private _COLLECTIONS_URL = `${this._BASE_URL}appdata/${this._APP_ID}/`;
+    private _USERS_URL = `${this._BASE_URL}user/${this._APP_ID}/`;
 
     public CONTENT_TYPE_HEADER = {
         name: `Content-Type`,
@@ -32,8 +23,26 @@ export class KinveyConfig {
         this.loadBase64AuthKeys();
     }
 
-    public get APP_ID() {
-        return this._APP_ID;
+    public get AUTH_HEADER_COMMON() {
+        return {
+            name: this._AUTHORIZATION_HEADER_NAME,
+            value: `${this._AUTHORIZATION_TYPE} ${this._AUTH_STRING_COMMON}`
+        };
+    }
+
+    public get USERS_URL(){
+        return this._USERS_URL;
+    }
+
+    public get LOGIN_USER_URL(){
+        return `${this._USERS_URL}login`;
+    }
+
+    public get AUTH_HEADER_USERS() {
+        return {
+            name: this._AUTHORIZATION_HEADER_NAME,
+            value: `${this._AUTHORIZATION_TYPE} ${this._AUTH_STRING_USERS}`
+        };
     }
 
     public getCollectionUrl(collectionName: string, filter?: string) {
