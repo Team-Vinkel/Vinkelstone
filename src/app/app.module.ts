@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
         HttpModule,
         RouterModule.forRoot([
             {
-                path: '',
+                path: 'home',
                 component: HomeComponent
             }
         ])
