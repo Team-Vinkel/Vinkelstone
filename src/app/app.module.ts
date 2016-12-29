@@ -6,15 +6,19 @@ import { HttpModule } from '@angular/http';
 import { KinveyConfig } from './shared/kinvey/kinvey.config';
 import { KinveyService } from './shared/kinvey/kinvey.service';
 
+import { CardService } from './cards/shared/card.service';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CardsListComponent } from './cards/cards-list/cards-list.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        CardsListComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +26,10 @@ import { AppRoutingModule } from './app-routing.module';
         HttpModule,
         AppRoutingModule
     ],
-    providers: [KinveyService, KinveyConfig],
+    providers: [
+        KinveyService,
+        KinveyConfig,
+        CardService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

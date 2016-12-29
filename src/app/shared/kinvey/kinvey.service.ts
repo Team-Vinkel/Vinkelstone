@@ -9,7 +9,7 @@ export class KinveyService {
     constructor(private _config: KinveyConfig, private _http: Http) {
     }
 
-    getCollection(collectionName: string, filter?: string) {
+    public getCollection(collectionName: string, filter?: string) {
         let url = this._config.getCollectionUrl(collectionName, filter);
         let auth = this._config.AUTH_HEADER_COMMON;
 
@@ -20,7 +20,7 @@ export class KinveyService {
             .map(res => res.json());
     }
 
-    postCollection(collectionName: string, body: Object) {
+    public postCollection(collectionName: string, body: Object) {
         let url = this._config.getCollectionUrl(collectionName);
         let auth = this._config.AUTH_HEADER_COMMON;
         let contentType = this._config.CONTENT_TYPE_HEADER;
@@ -33,7 +33,7 @@ export class KinveyService {
             .map(res => res.json());
     }
 
-    putCollection(collectionName: string, itemId: string, body: Object) {
+    public putCollection(collectionName: string, itemId: string, body: Object) {
         let url = `${this._config.getCollectionUrl(collectionName)}${itemId}/`;
         let auth = this._config.AUTH_HEADER_COMMON;
         let contentType = this._config.CONTENT_TYPE_HEADER;
@@ -46,7 +46,7 @@ export class KinveyService {
             .map(res => res.json());
     }
 
-    registerUser(user: Object) {
+    public registerUser(user: Object) {
         let url = this._config.USERS_URL;
         let auth = this._config.AUTH_HEADER_USERS;
         let contentType = this._config.CONTENT_TYPE_HEADER;
@@ -59,7 +59,7 @@ export class KinveyService {
             .map(res => res.json());
     }
 
-    loginUser(user: Object) {
+    public loginUser(user: Object) {
         let url = this._config.LOGIN_USER_URL;
         let auth = this._config.AUTH_HEADER_USERS;
         let contentType = this._config.CONTENT_TYPE_HEADER;

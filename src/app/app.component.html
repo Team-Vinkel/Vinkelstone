@@ -1,20 +1,17 @@
-<h1>
-  {{title}}
-</h1>
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/home">Home</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" routerLink="/home">Vinkelstone</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/cards">Cards</a></li>
+            <li><a href="#">Dicks</a></li>
+            <li><a href="#">out</a></li>
+            <li><a href="#">for</a></li>
+            <li><a href="#">Angular</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">!</a></li>
+        </ul>
     </div>
-    <ul class="nav navbar-nav">
-        <li><a href="#">Decks</a></li>
-        <li><a href="#">Dicks</a></li>
-        <li><a href="#">out</a></li>
-        <li><a href="#">for</a></li>
-        <li><a href="#">Angular</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">!</a></li>
-      </ul>
-  </div>
 </nav>
 <router-outlet></router-outlet>
