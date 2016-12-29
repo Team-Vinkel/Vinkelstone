@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { KinveyConfig } from './shared/kinvey/kinvey.config';
@@ -20,6 +20,7 @@ import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 
 @NgModule({
     declarations: [
@@ -32,12 +33,14 @@ import { AppRoutingModule } from './app-routing.module';
         CreateSpellComponent,
         CreateHeroPowerComponent,
         CreateMinionComponent,
-        CreateWeaponComponent
+        CreateWeaponComponent,
+        CreateDeckComponent
         // End card components
     ],
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         AppRoutingModule
     ],

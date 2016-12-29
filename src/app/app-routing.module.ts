@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
+import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component'
 import { CreateCardComponent } from './cards/create-card/create-card.component';
 import { CreateSpellComponent } from './cards/create-card/create-spell/create-spell.component';
 import { CreateHeroPowerComponent } from './cards/create-card/create-hero-power/create-hero-power.component';
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
     {
         path: 'deck',
         component: DeckBuilderComponent
+    },
+    {
+        path: 'deck-create',
+        component: CreateDeckComponent
     },
     {
         path: 'create-card',

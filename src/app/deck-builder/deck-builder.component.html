@@ -1,7 +1,8 @@
+<button type="button" class="btn btn-primary" routerLink="/deck-create">Create a deck</button>
 <div class="row">
   <div *ngFor="let deck of decks" class="col-xs-6 col-md-3">
     <a href="#" class="thumbnail">
-      <img src="{{deck.pictureUrl}}" alt="deck-image">
+      <img src="/assets/images/deck-types/{{deck.type}}.png" alt="deck-image">
     </a>
   </div>
 </div>

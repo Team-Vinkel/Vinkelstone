@@ -1,0 +1,34 @@
+<form (ngSubmit)="createDeck($event)">
+  <div class="form-group">
+    <label for="deckName">Deck name</label>
+    <input type="text" class="form-control" id="deckName" placeholder="Deck name">
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Druid</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Hunter</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Mage</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Paladin</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Priest</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Rogue</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Shaman</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Warlock</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="deckType">Warrior</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
