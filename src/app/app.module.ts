@@ -7,18 +7,21 @@ import { KinveyConfig } from './shared/kinvey/kinvey.config';
 import { KinveyService } from './shared/kinvey/kinvey.service';
 
 import { CardService } from './cards/shared/card.service';
+import { DeckBuilderService } from './deck-builder/shared/deck-builder.service'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
+import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        CardsListComponent
+        CardsListComponent,
+        DeckBuilderComponent
     ],
     imports: [
         BrowserModule,
@@ -29,7 +32,9 @@ import { CardsListComponent } from './cards/cards-list/cards-list.component';
     providers: [
         KinveyService,
         KinveyConfig,
-        CardService],
+        CardService,
+        DeckBuilderService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

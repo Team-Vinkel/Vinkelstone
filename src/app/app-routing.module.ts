@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
+import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 
 const appRoutes: Routes = [
     {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'cards',
         component: CardsListComponent
+    },
+    {
+        path: 'deck',
+        component: DeckBuilderComponent
     }
 ];
 
