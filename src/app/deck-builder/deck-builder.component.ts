@@ -17,7 +17,12 @@ export class DeckBuilderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.decks = this._deckBuilderService.getAllDecks()
+    this._deckBuilderService
+      .getAllDecks()
+      .subscribe(
+        res => this.decks = res,
+        err => console.log(err)
+      );
   }
 
 }
