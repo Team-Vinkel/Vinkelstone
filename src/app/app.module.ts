@@ -7,7 +7,7 @@ import { KinveyConfig } from './shared/kinvey/kinvey.config';
 import { KinveyService } from './shared/kinvey/kinvey.service';
 
 import { CardService } from './cards/shared/card.service';
-import { DeckBuilderService } from './deck-builder/shared/deck-builder.service'
+import { DeckBuilderService } from './deck-builder/shared/deck-builder.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
