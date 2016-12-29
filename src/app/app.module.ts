@@ -10,15 +10,17 @@ import { CardService } from './cards/shared/card.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CardsListComponent } from './cards/cards-list/cards-list.component';
+import { CreateCardComponent } from './cards/create-card/create-card.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { CardsListComponent } from './cards/cards-list/cards-list.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        CardsListComponent
+        CardsListComponent,
+        CreateCardComponent
     ],
     imports: [
         BrowserModule,
