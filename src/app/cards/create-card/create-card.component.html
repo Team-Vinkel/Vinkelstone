@@ -1,8 +1,9 @@
-<div class="list-group">
+<div class="container">
+  <div class="list-group text-center">
     <a [routerLink]="[{outlets: {cardCreatorForm: 'minion'}}]" class="list-group-item">Minion</a>
     <a [routerLink]="[{outlets: {cardCreatorForm: 'spell'}}]" class="list-group-item">Spell</a>
     <a [routerLink]="[{outlets: {cardCreatorForm: 'weapon'}}]" class="list-group-item">Weapon</a>
     <a [routerLink]="[{outlets: {cardCreatorForm: 'hero-power'}}]" class="list-group-item">Hero power</a>
+  </div>
+  <router-outlet name="cardCreatorForm"></router-outlet>
 </div>
-
-<router-outlet name="cardCreatorForm"></router-outlet>
