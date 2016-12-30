@@ -8,4 +8,10 @@ export class Crypto {
 
         return base64;
     }
+
+    static encryptToSha1(string) {
+        let sha1 = CryptoJS.SHA1(string).toString();
+
+        return sha1;
+    }
 }
