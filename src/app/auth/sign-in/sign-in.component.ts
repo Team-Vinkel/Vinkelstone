@@ -21,7 +21,18 @@ export class SignInComponent implements OnInit {
   loginUser() {
     this._authService.loginUser(this.user)
       .subscribe(
-        res => console.log(res),
+        res => {
+          if (res._body) {
+            // Error handling here
+            console.log(res);
+          } else {
+            let loggedInUser = {
+              username: res.username,
+              authtoken: res._kmd.authtoken
+            };
+            localStorage.setItem('user', JSON.stringify(loggedInUser));
+          }
+        },
         err => console.log(err)
       );
   }

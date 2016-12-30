@@ -23,10 +23,10 @@ export class AuthService {
     }
 
     public logoutUser() {
-        localStorage.clear();
+        localStorage.removeItem('user');
     }
 
-    public isLoggedIn() {
+    public isUserLoggedIn() {
         let userDataString: string = localStorage.getItem('user');
         if (!userDataString) {
             return false;
