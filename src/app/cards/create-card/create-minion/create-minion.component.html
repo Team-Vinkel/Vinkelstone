@@ -1,3 +1,11 @@
-<p>
-    Imagine that this is a form that creates a minion.
-</p>
+<form (ngSubmit)="createCard()" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" name="name" [(ngModel)]="card.name" placeholder="Enter minion name:">
+        <input class="form-control" type="text" name="manaCost" [(ngModel)]="card.manaCost" placeholder="Enter mana cost:">
+        <input class="form-control" type="text" name="health" [(ngModel)]="card.health" placeholder="Enter health:">
+        <input class="form-control" type="text" name="attack" [(ngModel)]="card.attack" placeholder="Enter attack:">
+        <input class="form-control" type="text" name="description" [(ngModel)]="card.description" placeholder="Enter description:">
+        <input class="form-control" type="text" name="pictureUrl" [(ngModel)]="card.pictureUrl" placeholder="Enter picture url:">
+    </div>
+    <button type="submit" class="btn btn-default">Create</button>
+</form>
