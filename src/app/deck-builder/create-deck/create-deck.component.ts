@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
+import { DeckBuilderService } from '../shared/deck-builder.service'
+import { IDeck } from '../shared/deck';
+
 @Component({
   selector: 'app-create-deck',
   templateUrl: './create-deck.component.html',
@@ -7,12 +11,20 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateDeckComponent implements OnInit {
 
-  constructor() { }
+  public deck: IDeck;
+  constructor(private _deckBuilderService: DeckBuilderService) {
 
-  ngOnInit() {
   }
 
-  createDeck(event) {
-    console.log(event);
+  ngOnInit() {
+    this.deck = { };
+  }
+
+  createDeck() {
+    this._deckBuilderService.createDeck(this.deck)
+      .subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      );
   }
 }
