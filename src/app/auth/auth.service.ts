@@ -13,13 +13,13 @@ export class AuthService {
     }
 
     public loginUser(user: IUser) {
-        user.password = Crypto.encryptToSha1(user.password);
-        return this._kinveyService.loginUser(user);
+        let userToSend = this.formatUserData(user);
+        return this._kinveyService.loginUser(userToSend);
     }
 
     public registerUser(user: IUser) {
-        user.password = Crypto.encryptToSha1(user.password);
-        return this._kinveyService.loginUser(user);
+        let userToSend = this.formatUserData(user);
+        return this._kinveyService.registerUser(userToSend);
     }
 
     public logoutUser() {
@@ -33,6 +33,15 @@ export class AuthService {
         }
 
         return true;
+    }
+
+    private formatUserData(user: IUser) {
+        let hashedPassword = Crypto.encryptToSha1(user.password);
+        let formattedUser: IUser = {
+            username: user.username,
+            password: hashedPassword
+        };
+        return formattedUser;
     }
 
 }

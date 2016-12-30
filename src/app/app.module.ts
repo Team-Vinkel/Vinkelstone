@@ -8,6 +8,7 @@ import { KinveyService } from './shared/kinvey/kinvey.service';
 
 import { CardService } from './cards/shared/card.service';
 import { DeckBuilderService } from './deck-builder/shared/deck-builder.service';
+import { AuthService } from './auth/auth.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -45,7 +46,8 @@ import { CardsModule } from './cards/cards.module';
         KinveyService,
         KinveyConfig,
         CardService,
-        DeckBuilderService
+        DeckBuilderService,
+        AuthService
     ],
     bootstrap: [AppComponent]
 })
