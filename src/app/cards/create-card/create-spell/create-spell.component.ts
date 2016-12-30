@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CardService } from './../../shared/card.service';
+import { CardType } from '../../shared/enums/card-type';
+import { ICard } from '../../shared/card';
+
 @Component({
   selector: 'app-create-spell',
   templateUrl: './create-spell.component.html',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateSpellComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  card: ICard;
+  constructor(private _cardService: CardService) {
   }
 
+  ngOnInit() {
+    this.card = { type: CardType.Spell };
+  }
+
+  createCard() {
+    this._cardService.createCard(this.card)
+      .subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      )
+  }
 }
