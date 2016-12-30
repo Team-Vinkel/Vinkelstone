@@ -11,6 +11,9 @@ import { CreateHeroPowerComponent } from './cards/create-card/create-hero-power/
 import { CreateWeaponComponent } from './cards/create-card/create-weapon/create-weapon.component';
 import { CreateMinionComponent } from './cards/create-card/create-minion/create-minion.component';
 
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+
 const appRoutes: Routes = [
     {
         path: 'home',
@@ -53,6 +56,14 @@ const appRoutes: Routes = [
                 component: CreateHeroPowerComponent
             }
         ]
+    },
+    {
+        path: 'sign-up',
+        component: SignUpComponent
+    },
+    {
+        path: 'sign-in',
+        component: SignInComponent
     },
     // Default(fallback) routes
     {

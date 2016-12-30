@@ -22,27 +22,24 @@ import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 
+import { AuthModule } from './auth/auth.module';
+import { CardsModule } from './cards/cards.module';
+
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        CardsListComponent,
         DeckBuilderComponent,
-        // Card components(separate module must be created)
-        CreateCardComponent,
-        CreateSpellComponent,
-        CreateHeroPowerComponent,
-        CreateMinionComponent,
-        CreateWeaponComponent,
         CreateDeckComponent
-        // End card components
     ],
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AuthModule,
+        CardsModule
     ],
     providers: [
         KinveyService,
