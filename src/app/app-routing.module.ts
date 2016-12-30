@@ -20,16 +20,19 @@ const appRoutes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'cards',
-        component: CardsListComponent
-    },
-    {
         path: 'deck',
         component: DeckBuilderComponent
     },
     {
         path: 'deck-create',
-        component: CreateDeckComponent
+        component: CreateDeckComponent,
+        children: [
+            {
+                path: '',
+                outlet: 'cardSelectForm',
+                component: CardsListComponent
+            }
+        ]
     },
     {
         path: 'create-card',
