@@ -25,13 +25,15 @@ import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.comp
 
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
+import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         DeckBuilderComponent,
-        CreateDeckComponent
+        CreateDeckComponent,
+        DeckViewComponent
     ],
     imports: [
         BrowserModule,

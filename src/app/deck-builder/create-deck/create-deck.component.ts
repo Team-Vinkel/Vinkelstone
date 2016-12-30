@@ -21,6 +21,8 @@ export class CreateDeckComponent implements OnInit {
   }
 
   createDeck() {
+    this.deck.cards = JSON.parse(sessionStorage.getItem('cardsForDeck'));
+
     this._deckBuilderService.createDeck(this.deck)
       .subscribe(
         res => console.log(res),

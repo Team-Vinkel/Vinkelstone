@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
+import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
 import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component'
 import { CreateCardComponent } from './cards/create-card/create-card.component';
 import { CreateSpellComponent } from './cards/create-card/create-spell/create-spell.component';
@@ -20,19 +21,20 @@ const appRoutes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'deck',
+        path: 'decks',
         component: DeckBuilderComponent
     },
     {
+        path: 'decks/:id',
+        component: DeckViewComponent
+    },
+    {
+        path: 'cards',
+        component: CardsListComponent
+    },
+    {
         path: 'deck-create',
-        component: CreateDeckComponent,
-        children: [
-            {
-                path: '',
-                outlet: 'cardSelectForm',
-                component: CardsListComponent
-            }
-        ]
+        component: CreateDeckComponent
     },
     {
         path: 'create-card',

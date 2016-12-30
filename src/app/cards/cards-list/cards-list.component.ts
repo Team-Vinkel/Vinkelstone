@@ -11,8 +11,15 @@ import { ICard } from './../shared/card';
 })
 export class CardsListComponent implements OnInit {
   public cards: ICard[];
+  private cardsForDeck: string[];
 
   constructor(private _cardService: CardService) {
+    this.cardsForDeck = [];
+  }
+
+  addCardToList(card: ICard) {
+    this.cardsForDeck.push(card._id);
+    sessionStorage.setItem('cardsForDeck', JSON.stringify(this.cardsForDeck))
   }
 
   ngOnInit() {

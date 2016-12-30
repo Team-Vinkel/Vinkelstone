@@ -6,6 +6,6 @@
     <p>Attack: {{card.attack}}</p>
     <p>Description: {{card.description}}</p>
     <p>Creator: {{card.creator}}</p>
-    <img src="{{card.pictureUrl}}" alt="{{card.name}}" width="100" />
+    <img src="{{card.pictureUrl}}" alt="{{card.name}}" (click)="addCardToList(card)" width="100" />
     <hr style="border-width: 5px; border-color: black" />
 </div>
