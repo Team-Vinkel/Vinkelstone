@@ -1,34 +1,34 @@
-<form (ngSubmit)="createDeck($event)">
+<form (ngSubmit)="createDeck()" method="POST">
   <div class="form-group">
     <label for="deckName">Deck name</label>
-    <input type="text" class="form-control" id="deckName" placeholder="Deck name">
+    <input type="text" class="form-control" id="deckName" name="name" [(ngModel)]="deck.name" placeholder="Deck name">
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Druid</label>
+    <label><input type="radio" name="type" value="Druid" [(ngModel)]="deck.type">Druid</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Hunter</label>
+    <label><input type="radio" name="type" value="Hunter" [(ngModel)]="deck.type">Hunter</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Mage</label>
+    <label><input type="radio" name="type" value="Mage" [(ngModel)]="deck.type">Mage</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Paladin</label>
+    <label><input type="radio" name="type" value="Paladin" [(ngModel)]="deck.type">Paladin</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Priest</label>
+    <label><input type="radio" name="type" value="Priest" [(ngModel)]="deck.type">Priest</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Rogue</label>
+    <label><input type="radio" name="type" value="Rogue" [(ngModel)]="deck.type">Rogue</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Shaman</label>
+    <label><input type="radio" name="type" value="Shaman" [(ngModel)]="deck.type">Shaman</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Warlock</label>
+    <label><input type="radio" name="type" value="Warlock" [(ngModel)]="deck.type">Warlock</label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="deckType">Warrior</label>
+    <label><input type="radio" name="type" value="Warrior" [(ngModel)]="deck.type">Warrior</label>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
