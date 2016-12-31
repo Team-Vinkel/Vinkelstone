@@ -53,6 +53,11 @@ export class AuthService {
         }
     }
 
+    public getCurrentUsername() {
+        let result = JSON.parse(localStorage.getItem('user')).username;
+        return result;
+    }
+
     private formatUserData(user: IUser) {
         let hashedPassword = Crypto.encryptToSha1(user.password);
         let formattedUser: IUser = {

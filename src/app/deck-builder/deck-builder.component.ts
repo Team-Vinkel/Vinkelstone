@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DeckBuilderService } from './shared/deck-builder.service';
+import { AuthService } from '../auth/auth.service';
 
 import { IDeck } from './shared/deck';
 
@@ -12,8 +13,22 @@ import { IDeck } from './shared/deck';
 export class DeckBuilderComponent implements OnInit {
   public decks: IDeck[];
 
-  constructor(private _deckBuilderService: DeckBuilderService) {
+  constructor(
+    private _deckBuilderService: DeckBuilderService,
+    private _authService: AuthService) {
 
+  }
+
+  public listCurrentUserDecks() {
+    let currentUser = this._authService.getCurrentUsername();
+
+    for (let i = 0; i < this.decks.length; i += 1) {
+      let currentDeck = this.decks[i];
+
+      if (currentDeck.creator !== currentUser) {
+        this.decks.splice(i, 1);
+      };
+    };
   }
 
   ngOnInit() {
