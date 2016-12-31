@@ -22,4 +22,13 @@ export class CardService {
         cardToSend.type = CardType[card.type];
         return this._kinvey.postCollection(CARDS_COLLECTION_NAME, card);
     }
+
+    public getCardsByIds(ids: string[]): Observable<ICard[]> {
+        let filter = {
+            _id: {
+                $in: ids
+            }
+        };
+        return this._kinvey.getCollection(CARDS_COLLECTION_NAME, JSON.stringify(filter));
+    }
 }
