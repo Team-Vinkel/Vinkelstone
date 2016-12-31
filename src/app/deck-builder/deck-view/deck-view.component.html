@@ -1,3 +1,13 @@
-<p>
-  deck-view works!
-</p>
+<h1>Current deck: {{deck.name}}</h1>
+<h3>Deck creator: {{deck.creator}}</h3>
+<div *ngFor="let card of cards">
+    <p>Type: {{card.type}}</p>
+    <p>Name: {{card.name}}</p>
+    <p>Mana cost: {{card.manaCost}}</p>
+    <p>Health: {{card.health}}</p>
+    <p>Attack: {{card.attack}}</p>
+    <p>Description: {{card.description}}</p>
+    <p>Creator: {{card.creator}}</p>
+    <img src="{{card.pictureUrl}}" alt="{{card.name}}" width="100" />
+    <hr style="border-width: 5px; border-color: black" />
+</div>

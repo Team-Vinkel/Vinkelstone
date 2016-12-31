@@ -6,5 +6,5 @@ export interface IDeck {
     type?: DeckType;
     name?: string;
     creator?: string;
-    cards?: ICard[];
+    cards?: string[];
 }
