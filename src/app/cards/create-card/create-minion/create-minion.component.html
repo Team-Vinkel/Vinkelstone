@@ -1,45 +1,27 @@
 <form (ngSubmit)="createCard()" method="POST">
-  <div class="form-group">
-      <label for="minionName">Minion Name</label>
-      <input id="minionName" class="form-control" type="text" name="name" placeholder="Enter minion name:" 
-      [(ngModel)]="card.name"
-      pattern="[a-zA-Z0-9_ ]{4,16}"
-      required>
-  </div>
-  <div class="form-group">
-      <label for="manaCost">Mana Cost</label>
-      <input id="manaCost" class="form-control" type="text" name="manaCost" placeholder="Enter mana cost:" 
-      [(ngModel)]="card.manaCost"
-      pattern="^([0-9]{0,1}|10)$"
-      required>
-  </div>
-  <div class="form-group">
-      <label for="health">Health</label>
-      <input id="health" class="form-control" type="text" name="health" placeholder="Enter health:" 
-      [(ngModel)]="card.health"
-      pattern="[0-9]{0,2}"
-      required>
-  </div>
-  <div class="form-group">
-      <label for="attack">Attack</label>
-      <input id="attack" class="form-control" type="text" name="attack" placeholder="Enter attack:" 
-      [(ngModel)]="card.attack"
-      pattern="[0-9]{0,2}"
-      required>
-  </div>
-  <div class="form-group">
-      <label for="description">Description</label>
-      <input id="description" class="form-control" type="text" name="description" placeholder="Enter description:" 
-      [(ngModel)]="card.description"
-      pattern="[a-zA-Z0-9_ ]{8,32}"
-      required>
-  </div>
-  <div class="form-group">
-      <label for="pictureUrl">Picture URL</label>
-      <input id="pictureUrl" class="form-control" type="text" name="pictureUrl" placeholder="Enter picture url:" 
-      [(ngModel)]="card.pictureUrl"
-      pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|gif|png)$"
-      required>
-  </div>
-  <button type="submit" class="btn btn-default">Create</button>
+    <div class="form-group">
+        <label for="minionName">Minion Name</label>
+        <input id="minionName" class="form-control" type="text" name="name" placeholder="Enter minion name:" [(ngModel)]="card.name" pattern="[a-zA-Z0-9_ ]{4,16}" required>
+    </div>
+    <div class="form-group">
+        <label for="manaCost">Mana Cost</label>
+        <input id="manaCost" class="form-control" type="text" name="manaCost" placeholder="Enter mana cost:" [(ngModel)]="card.manaCost" pattern="^([0-9]{0,1}|10)$" required>
+    </div>
+    <div class="form-group">
+        <label for="health">Health</label>
+        <input id="health" class="form-control" type="text" name="health" placeholder="Enter health:" [(ngModel)]="card.health" pattern="[0-9]{0,2}" required>
+    </div>
+    <div class="form-group">
+        <label for="attack">Attack</label>
+        <input id="attack" class="form-control" type="text" name="attack" placeholder="Enter attack:" [(ngModel)]="card.attack" pattern="[0-9]{0,2}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" class="form-control" type="text" name="description" placeholder="Enter description:" [(ngModel)]="card.description" pattern=".{0,64}" required>
+    </div>
+    <div class="form-group">
+        <label for="pictureUrl">Picture URL</label>
+        <input id="pictureUrl" class="form-control" type="text" name="pictureUrl" placeholder="Enter picture url:" [(ngModel)]="card.pictureUrl" pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|gif|png)$" required>
+    </div>
+    <button type="submit" class="btn btn-default">Create</button>
 </form>

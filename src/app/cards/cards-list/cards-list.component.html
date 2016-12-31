@@ -4,7 +4,7 @@
     <div>Mana cost: {{card.manaCost}}</div>
     <div>Health: {{card.health}}</div>
     <div>Attack: {{card.attack}}</div>
-    <div>Description: {{card.description}}</div>
+    <div>Description: <span [innerHTML]="card.description | markdownBold | markdownCursive"></span></div>
     <div>Creator: {{card.creator}}</div>
     <img src="{{card.pictureUrl}}" alt="{{card.name}}" width="100" />
     <button type="button" class="btn btn-primary" (click)="addCardToList(card)">Add card for deck</button>

@@ -22,6 +22,8 @@ import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.comp
 
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
+import { PipesModule } from './pipes/pipes.module';
+
 import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
 import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
 
@@ -41,7 +43,8 @@ import { DecksUserComponent } from './deck-builder/decks-user/decks-user.compone
         HttpModule,
         AppRoutingModule,
         AuthModule,
-        CardsModule
+        CardsModule,
+        PipesModule
     ],
     providers: [
         KinveyService,
