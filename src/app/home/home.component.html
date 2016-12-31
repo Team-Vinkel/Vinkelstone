@@ -1,6 +1,6 @@
-<div class="text-center">
+<div class="text-center" [@visibilityChanged]="isVisible">
   <img id="innkeeperimg" src="../../assets/images/homepage/innkeeper.png" alt="innkeeper">
-  <h2 id="innkeepermsg"></h2>
+  <h2 id="innkeepermsg">{{innKeeperMessage}}</h2>
 </div>
 <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -50,23 +50,4 @@
       <p><a class="btn btn-warning" href="/gamesearch" role="button">Open Card Creator</a></p>
     </div>
   </div>
-  <!--<script>
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    var innkeepermessages = [
-      "Have you seen the weather out there? Ohh! At least it's warm in here!",
-      "There you are! Back from your adventures?",
-      "I'm glad you're here, friend, there's a chill outside.",
-      "Hurry, before someone steals your seat!",
-      "Busy night... but there's always room for another!",
-      "Ohohoho - it's good to see you again!"
-    ]
-    var quoteNumber = getRandomInt(0, innkeepermessages.length - 1);
-    var message = innkeepermessages[quoteNumber];
-    document.getElementById("innkeepermsg").innerHTML = message;
-    console.log("chep");
-    console.log(message);
-  </script>-->
 </div>
