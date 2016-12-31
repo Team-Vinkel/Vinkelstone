@@ -6,10 +6,14 @@ import { IUser } from './shared/user';
 
 import { Crypto } from './../shared/utils/crypto';
 
+import { Subject } from 'rxjs/Subject';
+
 @Injectable()
 export class AuthService {
+    private _isUserLoggedIn: Subject<boolean>;
 
     constructor(private _kinveyService: KinveyService) {
+        this._isUserLoggedIn = new Subject<boolean>();
     }
 
     public loginUser(user: IUser) {
@@ -24,15 +28,29 @@ export class AuthService {
 
     public logoutUser() {
         localStorage.removeItem('user');
+        this._isUserLoggedIn.next(false);
     }
 
-    public isUserLoggedIn() {
-        let userDataString: string = localStorage.getItem('user');
-        if (!userDataString) {
-            return false;
-        }
+    public get isUserLoggedIn() {
+        return this._isUserLoggedIn.asObservable();
+    }
 
-        return true;
+    public setIsUserLoggedIn() {
+        this._isUserLoggedIn.next(true);
+    }
+
+    public checkUserLogIn() {
+        let userString = localStorage.getItem('user');
+        if (!userString) {
+            this._isUserLoggedIn.next(false);
+        } else {
+            let user = JSON.parse(userString);
+            if (!user.authtoken) {
+                this._isUserLoggedIn.next(false);
+            } else {
+                this._isUserLoggedIn.next(true);
+            }
+        }
     }
 
     private formatUserData(user: IUser) {

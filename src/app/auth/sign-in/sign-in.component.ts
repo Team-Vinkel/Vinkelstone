@@ -31,6 +31,7 @@ export class SignInComponent implements OnInit {
               authtoken: res._kmd.authtoken
             };
             localStorage.setItem('user', JSON.stringify(loggedInUser));
+            this._authService.setIsUserLoggedIn();
           }
         },
         err => console.log(err)
