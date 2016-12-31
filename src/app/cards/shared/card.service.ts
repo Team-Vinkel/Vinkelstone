@@ -31,4 +31,11 @@ export class CardService {
         };
         return this._kinvey.getCollection(CARDS_COLLECTION_NAME, JSON.stringify(filter));
     }
+
+    public getCardsByUser(username: string) {
+        let filter = {
+            creator: username
+        };
+        return this._kinvey.getCollection(CARDS_COLLECTION_NAME, JSON.stringify(filter));
+    }
 }

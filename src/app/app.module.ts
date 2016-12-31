@@ -23,6 +23,7 @@ import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.comp
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
 import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
+import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component'
         HomeComponent,
         DeckBuilderComponent,
         CreateDeckComponent,
-        DeckViewComponent
+        DeckViewComponent,
+        DecksUserComponent
     ],
     imports: [
         BrowserModule,

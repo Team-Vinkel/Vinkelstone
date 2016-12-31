@@ -12,6 +12,7 @@ import { IDeck } from '../shared/deck';
   templateUrl: './create-deck.component.html',
   styleUrls: ['./create-deck.component.css']
 })
+
 export class CreateDeckComponent implements OnInit {
   public deck: IDeck;
 
@@ -23,13 +24,13 @@ export class CreateDeckComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.deck = {};
+    this.deck = {
+      creator: this._authService.getCurrentUsername(),
+      cards: this._deckBuilderService.getCardsForDeck()
+    };
   }
 
   createDeck() {
-    this.deck.creator = this._authService.getCurrentUsername();
-    this.deck.cards = this._deckBuilderService.getCardsForDeck();
-
     this._deckBuilderService.createDeck(this.deck).subscribe(
       res => console.log(res),
       err => console.log(err)

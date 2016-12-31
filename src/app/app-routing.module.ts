@@ -5,12 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
+import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
 import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 import { CreateCardComponent } from './cards/create-card/create-card.component';
 import { CreateSpellComponent } from './cards/create-card/create-spell/create-spell.component';
 import { CreateHeroPowerComponent } from './cards/create-card/create-hero-power/create-hero-power.component';
 import { CreateWeaponComponent } from './cards/create-card/create-weapon/create-weapon.component';
 import { CreateMinionComponent } from './cards/create-card/create-minion/create-minion.component';
+import { CardsUserComponent } from './cards/cards-user/cards-user.component';
 
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
@@ -76,6 +78,14 @@ const appRoutes: Routes = [
         path: 'sign-in',
         canActivate: [ UserIsNotLoggedGuard ],
         component: SignInComponent
+    },
+    {
+        path: 'profile/decks',
+        component: DecksUserComponent
+    },
+    {
+        path: 'profile/cards',
+        component: CardsUserComponent
     },
     // Default(fallback) routes
     {
