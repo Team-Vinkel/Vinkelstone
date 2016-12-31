@@ -1,11 +1,12 @@
 <div *ngFor="let card of cards">
-    <p>Type: {{card.type}}</p>
-    <p>Name: {{card.name}}</p>
-    <p>Mana cost: {{card.manaCost}}</p>
-    <p>Health: {{card.health}}</p>
-    <p>Attack: {{card.attack}}</p>
-    <p>Description: {{card.description}}</p>
-    <p>Creator: {{card.creator}}</p>
-    <img src="{{card.pictureUrl}}" alt="{{card.name}}" (click)="addCardToList(card)" width="100" />
+    <div>Type: {{card.type}}</div>
+    <div>Name: {{card.name}}</div>
+    <div>Mana cost: {{card.manaCost}}</div>
+    <div>Health: {{card.health}}</div>
+    <div>Attack: {{card.attack}}</div>
+    <div>Description: {{card.description}}</div>
+    <div>Creator: {{card.creator}}</div>
+    <img src="{{card.pictureUrl}}" alt="{{card.name}}" width="100" />
+    <button type="button" class="btn btn-primary" (click)="addCardToList(card)">Add card for deck</button>
     <hr style="border-width: 5px; border-color: black" />
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { DeckBuilderService } from '../shared/deck-builder.service'
+import { CardService } from '../../cards/shared/card.service'
 import { IDeck } from '../shared/deck';
 
 @Component({
@@ -10,9 +11,8 @@ import { IDeck } from '../shared/deck';
   styleUrls: ['./create-deck.component.css']
 })
 export class CreateDeckComponent implements OnInit {
-
   public deck: IDeck;
-  constructor(private _deckBuilderService: DeckBuilderService) {
+  constructor(private _deckBuilderService: DeckBuilderService, private _cardService: CardService) {
 
   }
 
@@ -21,7 +21,7 @@ export class CreateDeckComponent implements OnInit {
   }
 
   createDeck() {
-    this.deck.cards = JSON.parse(sessionStorage.getItem('cardsForDeck'));
+    this.deck.cards = this._deckBuilderService.getCardsForDeck();
 
     this._deckBuilderService.createDeck(this.deck)
       .subscribe(
