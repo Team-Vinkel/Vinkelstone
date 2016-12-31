@@ -10,6 +10,9 @@ import { CardService } from './cards/shared/card.service';
 import { DeckBuilderService } from './deck-builder/shared/deck-builder.service';
 import { AuthService } from './auth/auth.service';
 
+import { UserIsLoggedGuard } from './shared/route-guard/is-logged-guard';
+import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
@@ -43,7 +46,9 @@ import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component'
         KinveyConfig,
         CardService,
         DeckBuilderService,
-        AuthService
+        AuthService,
+        UserIsLoggedGuard,
+        UserIsNotLoggedGuard
     ],
     bootstrap: [AppComponent]
 })

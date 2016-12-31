@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from './../auth.service';
@@ -12,7 +13,7 @@ import { IUser } from './../shared/user';
 export class SignInComponent implements OnInit {
   public user: IUser;
 
-  constructor(private _authService: AuthService) { }
+  constructor(private _authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
     this.user = {};
@@ -32,6 +33,7 @@ export class SignInComponent implements OnInit {
             };
             localStorage.setItem('user', JSON.stringify(loggedInUser));
             this._authService.setIsUserLoggedIn();
+            setTimeout(() => this._router.navigate(['/home']), 1000);
           }
         },
         err => console.log(err)

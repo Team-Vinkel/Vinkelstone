@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
-import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component'
+import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 import { CreateCardComponent } from './cards/create-card/create-card.component';
 import { CreateSpellComponent } from './cards/create-card/create-spell/create-spell.component';
 import { CreateHeroPowerComponent } from './cards/create-card/create-hero-power/create-hero-power.component';
@@ -14,6 +14,9 @@ import { CreateMinionComponent } from './cards/create-card/create-minion/create-
 
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+
+import { UserIsLoggedGuard } from './shared/route-guard/is-logged-guard';
+import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
 
 const appRoutes: Routes = [
     {
@@ -34,11 +37,13 @@ const appRoutes: Routes = [
     },
     {
         path: 'deck-create',
-        component: CreateDeckComponent
+        component: CreateDeckComponent,
+        canActivate: [ UserIsLoggedGuard ],
     },
     {
         path: 'create-card',
         component: CreateCardComponent,
+        canActivate: [ UserIsLoggedGuard ],
         children: [
             {
                 path: 'minion',
@@ -64,10 +69,12 @@ const appRoutes: Routes = [
     },
     {
         path: 'sign-up',
+        canActivate: [ UserIsNotLoggedGuard ],
         component: SignUpComponent
     },
     {
         path: 'sign-in',
+        canActivate: [ UserIsNotLoggedGuard ],
         component: SignInComponent
     },
     // Default(fallback) routes
