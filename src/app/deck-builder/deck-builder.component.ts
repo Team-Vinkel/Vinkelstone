@@ -22,13 +22,19 @@ export class DeckBuilderComponent implements OnInit {
   public listCurrentUserDecks() {
     let currentUser = this._authService.getCurrentUsername();
 
-    for (let i = 0; i < this.decks.length; i += 1) {
-      let currentDeck = this.decks[i];
+    // for (let i = 0; i < this.decks.length; i += 1) {
+    //   let currentDeck = this.decks[i];
 
-      if (currentDeck.creator !== currentUser) {
-        this.decks.splice(i, 1);
-      };
-    };
+    //   if (currentDeck.creator !== currentUser) {
+    //     this.decks.splice(i, 1);
+    //   };
+    // };
+
+    this._deckBuilderService.getDecksByUser(currentUser)
+      .subscribe(
+        res => this.decks = res,
+        err => console.log(err)
+      );
   }
 
   ngOnInit() {

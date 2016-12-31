@@ -43,4 +43,11 @@ export class DeckBuilderService {
         };
         return this._kinvey.getCollection(DECK_COLLECTION_NAME, JSON.stringify(filter));
     }
+
+    public getDecksByUser(username: string) {
+        let filter = {
+            creator: username
+        };
+        return this._kinvey.getCollection(DECK_COLLECTION_NAME, JSON.stringify(filter));
+    }
 }
