@@ -34,8 +34,8 @@ export class DeckViewComponent implements OnInit {
   private _listCardsInDeck(deckId: string) {
     this._deckBuilderService.getDecksByIds([deckId])
       .concatMap(decks => {
-        this.deck = decks[0];
-        return this._cardService.getCardsByIds(decks[0].cards);
+        [ this.deck ] = decks;
+        return this._cardService.getCardsByIds(this.deck.cards);
       })
       .subscribe(
         res => this.cards = res,

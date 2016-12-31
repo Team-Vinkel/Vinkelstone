@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { DeckBuilderService } from '../shared/deck-builder.service'
-import { CardService } from '../../cards/shared/card.service'
+import { DeckBuilderService } from '../shared/deck-builder.service';
+import { CardService } from '../../cards/shared/card.service';
 import { AuthService } from '../../auth/auth.service';
 
 import { IDeck } from '../shared/deck';
