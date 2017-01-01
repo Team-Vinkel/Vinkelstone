@@ -27,13 +27,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     let innkeepermessages = [
-      "Have you seen the weather out there? Ohh! At least it's warm in here!",
-      "There you are! Back from your adventures?",
-      "I'm glad you're here, friend, there's a chill outside.",
-      "Hurry, before someone steals your seat!",
-      "Busy night... but there's always room for another!",
-      "Ohohoho - it's good to see you again!"
-    ]
+      `Have you seen the weather out there? Ohh! At least it's warm in here!`,
+      `There you are! Back from your adventures?`,
+      `I'm glad you're here, friend, there's a chill outside.`,
+      `Hurry, before someone steals your seat!`,
+      `Busy night... but there's always room for another!`,
+      `Ohohoho - it's good to see you again!`
+    ];
     let quoteNumber = getRandomInt(0, innkeepermessages.length - 1);
     this.innKeeperMessage = innkeepermessages[quoteNumber];
   }
