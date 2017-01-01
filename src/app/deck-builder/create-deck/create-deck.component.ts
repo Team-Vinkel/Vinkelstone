@@ -6,6 +6,7 @@ import { CardService } from '../../cards/shared/card.service';
 import { AuthService } from '../../auth/auth.service';
 
 import { IDeck } from '../shared/deck';
+import { DeckType } from '../shared/enums/deck-type';
 
 @Component({
   selector: 'app-create-deck',
@@ -26,7 +27,8 @@ export class CreateDeckComponent implements OnInit {
   ngOnInit() {
     this.deck = {
       creator: this._authService.getCurrentUsername(),
-      cards: this._deckBuilderService.getCardsForDeck()
+      cards: this._deckBuilderService.getCardsForDeck(),
+      type: DeckType.Druid
     };
   }
 

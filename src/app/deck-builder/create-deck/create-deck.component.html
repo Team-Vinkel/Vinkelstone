@@ -2,54 +2,40 @@
   <form (ngSubmit)="createDeck()" method="POST">
     <div class="form-group" data-toggle="buttons">
       <label for="deckName">Deck name</label>
-      <input type="text" class="form-control" id="deckName" name="name" [(ngModel)]="deck.name" placeholder="Deck name">
+      <input type="text" class="form-control" id="deckName" name="name" placeholder="Deck name" 
+      [(ngModel)]="deck.name"
+      required
+      pattern=".{4,16}"
+      >
     </div>
     <div class="btn-group">
-      <div class="radio">
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Druid" [(ngModel)]="deck.type">Druid
+          <input type="radio" name="type" value="Druid" [(ngModel)]="deck.type" required>Druid
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Hunter" [(ngModel)]="deck.type">Hunter
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Mage" [(ngModel)]="deck.type">Mage
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Paladin" [(ngModel)]="deck.type">Paladin
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Priest" [(ngModel)]="deck.type">Priest
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Rogue" [(ngModel)]="deck.type">Rogue
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Shaman" [(ngModel)]="deck.type">Shaman
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Warlock" [(ngModel)]="deck.type">Warlock
         </label>
-      </div>
-      <div class="radio">
         <label class="btn btn-warning">
           <input type="radio" name="type" value="Warrior" [(ngModel)]="deck.type">Warrior
         </label>
-      </div>
     </div>
     <button id="btn-sumbit-deck" type="submit" class="btn btn-default">Submit</button>
   </form>
