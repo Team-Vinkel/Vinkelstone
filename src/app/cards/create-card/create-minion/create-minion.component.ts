@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { ICard } from './../../shared/card';
@@ -17,21 +18,28 @@ export class CreateMinionComponent implements OnInit {
   public card: ICard;
   constructor(
     private _cardService: CardService,
-    private _authService: AuthService) {
-   }
+    private _authService: AuthService,
+    private _router: Router) {
+  }
 
   ngOnInit() {
     this.card = {
       type: CardType.Minion,
       creator: this._authService.getCurrentUsername()
-     };
+    };
   }
 
   createCard() {
     this._cardService.createCard(this.card)
       .subscribe(
-        res => console.log(res),
-        err => console.log(err)
+      res => {
+        if (res._body) {
+          // Error handling
+        } else {
+          setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 1000);
+        }
+      },
+      err => console.log(err)
       );
   }
 }

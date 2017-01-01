@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home/home.component';
 import { CardsListComponent } from './cards/cards-list/cards-list.component';
+import { CardViewComponent } from './cards/card-view/card-view.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
 import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
@@ -34,13 +35,17 @@ const appRoutes: Routes = [
         component: DeckViewComponent
     },
     {
+        path: 'deck-create',
+        component: CreateDeckComponent,
+        canActivate: [ UserIsLoggedGuard ],
+    },
+    {
         path: 'cards',
         component: CardsListComponent
     },
     {
-        path: 'deck-create',
-        component: CreateDeckComponent,
-        canActivate: [ UserIsLoggedGuard ],
+        path: 'cards/:id',
+        component: CardViewComponent
     },
     {
         path: 'create-card',

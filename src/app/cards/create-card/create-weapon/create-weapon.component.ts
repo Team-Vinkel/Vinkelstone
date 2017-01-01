@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { CardService } from './../../shared/card.service';
@@ -17,7 +18,8 @@ export class CreateWeaponComponent implements OnInit {
 
   constructor(
     private _cardService: CardService,
-    private _authService: AuthService) {
+    private _authService: AuthService,
+    private _router: Router) {
   }
 
   ngOnInit() {
@@ -30,8 +32,14 @@ export class CreateWeaponComponent implements OnInit {
   createCard() {
     this._cardService.createCard(this.card)
       .subscribe(
-        res => console.log(res),
-        err => console.log(err)
+      res => {
+        if (res._body) {
+          // Error handling
+        } else {
+          setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 1000);
+        }
+      },
+      err => console.log(err)
       );
   }
 }

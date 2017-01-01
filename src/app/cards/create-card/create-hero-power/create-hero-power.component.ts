@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { CardService } from '../../shared/card.service';
 import { AuthService } from '../../../auth/auth.service';
@@ -18,7 +18,8 @@ export class CreateHeroPowerComponent implements OnInit {
 
   constructor(
     private _cardService: CardService,
-    private _authService: AuthService) {
+    private _authService: AuthService,
+    private _router: Router ) {
   }
 
   ngOnInit() {
@@ -31,8 +32,14 @@ export class CreateHeroPowerComponent implements OnInit {
   createCard() {
     this._cardService.createCard(this.card)
       .subscribe(
-        res => console.log(res),
-        err => console.log(err)
+      res => {
+        if (res._body) {
+          // Error handling
+        } else {
+          setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 1000);
+        }
+      },
+      err => console.log(err)
       );
   }
 
