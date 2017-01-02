@@ -1,3 +1,65 @@
-<p>
-  card-view works!
-</p>
+<div class="main" [ngSwitch]="card.type">
+  <div class="card Minion" *ngSwitchCase="'Minion'">
+    <div class="cardbg bg1" style="background-image: url({{card.pictureUrl}});"></div>
+    <div class="cardbg bg2" style="background-image: url({{card.pictureUrl}});"></div>
+    <div class="cardbg bg3" style="background-image: url({{card.pictureUrl}});"></div>
+    <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Minion-Neutral.png')"></div>
+    <svg class="textsvg">
+      <defs>
+        <path d="m60,339 c57,7 205,-47 290,-10" id="pathMinion"></path>
+      </defs>
+      <text>
+        <textPath startOffset="50%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pathMinion" id="cardname-Minion">{{card.name}}</textPath>
+      </text>
+    </svg>
+    <div class="cardtext" style="font-size: 24px;">{{card.description}}</div>
+    <div class="cardno attack">{{card.attack}}</div>
+    <div class="cardno defense">{{card.health}}</div>
+    <div class="cardno cost">{{card.manaCost}}</div>
+  </div>
+  <div class="card Spell" *ngSwitchCase="'Spell'">
+    <!--<div class="cardbg bg1" style="background-image: url(&quot;art/Living Artifact.crop.jpg&quot;);"></div>-->
+    <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Spell-Neutral.png')"></div>
+    <svg class="textsvg">
+      <defs>
+        <path d="m43,348 c80,-55 253,-50 318,-4" id="pathSpell"></path>
+      </defs>
+      <text>
+        <textPath startOffset="50%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pathSpell" id="cardname-Spell">{{card.name}}</textPath>
+      </text>
+    </svg>
+    <div class="cardtext" style="font-size: 24px;">{{card.description}}</div>
+    <div class="cardno cost">{{card.manaCost}}</div>
+  </div>
+  <div class="card Weapon" *ngSwitchCase="'Weapon'">
+    <!--<div class="cardbg bg1" style="background-image: url(&quot;art/Hungry Mist.crop.jpg&quot;);"></div>-->
+    <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Weapon-Neutral.png')"></div>
+    <svg class="textsvg">
+      <defs>
+        <path d="m45,314 l323,0" id="pathWeapon"></path>
+      </defs>
+      <text>
+        <textPath startOffset="50%" xlink:href="#pathWeapon" id="cardname-Spell">{{card.name}}</textPath>
+      </text>
+    </svg>
+    <div class="cardtext">{{card.description}}</div>
+    <div class="cardno attack">{{card.attack}}</div>
+    <div class="cardno defense">{{card.health}}</div>
+    <div class="cardno cost">{{card.manaCost}}</div>
+  </div>
+  <div class="card HeroPower" *ngSwitchCase="'HeroPower'">
+    <!--<div class="cardbg bg1" style="background-image: url(&quot;art/Hungry Mist.crop.jpg&quot;);"></div>-->
+    <div class="cardfg" style="background-image: url('../../../assets/images/card-types/HeroPower-Neutral.png')"></div>
+    <svg class="textsvg">
+      <defs>
+        <path d="m35,286 l323,0" id="HeroPower"></path>
+      </defs>
+      <text>
+        <textPath startOffset="50%" xlink:href="#HeroPower" id="cardname-HeroPower">{{card.name}}</textPath>
+      </text>
+    </svg>
+    <div class="cardtext" style="font-size: 24px;"><b>Hero Power</b><br>{{card.description}}</div>
+    <div class="cardno cost">{{card.manaCost}}</div>
+  </div>
+  <div *ngSwitchDefault>Loading...</div>
+</div>

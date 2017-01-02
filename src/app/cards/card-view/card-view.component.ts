@@ -18,6 +18,7 @@ export class CardViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.card = {};
     this._activatedRoute.params
       .concatMap(params => {
         let cardId = params['id'];
