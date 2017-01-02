@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { UserOwnProfileModule } from './user-own-profile/user-own-profile.module';
 import { OtherUserProfileModule } from './other-user-profile/other-user-profile.module';
 
+import { UsersService } from './shared/users.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -11,6 +13,7 @@ import { OtherUserProfileModule } from './other-user-profile/other-user-profile.
     UserOwnProfileModule
   ],
   declarations: [],
+  providers: [ UsersService ],
   exports: [ OtherUserProfileModule, UserOwnProfileModule ]
 })
 export class ProfilesModule { }
