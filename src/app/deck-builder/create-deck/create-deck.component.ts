@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { DeckBuilderService } from '../shared/deck-builder.service';
 import { CardService } from '../../cards/shared/card.service';
@@ -19,7 +20,8 @@ export class CreateDeckComponent implements OnInit {
   constructor(
     private _deckBuilderService: DeckBuilderService,
     private _cardService: CardService,
-    private _authService: AuthService) {
+    private _authService: AuthService,
+    private _router: Router) {
 
   }
 
@@ -32,7 +34,9 @@ export class CreateDeckComponent implements OnInit {
 
   createDeck() {
     this._deckBuilderService.createDeck(this.deck).subscribe(
-      res => console.log(res),
+      res => {
+        this._router.navigateByUrl(`/decks/${res._id}`);
+      },
       err => console.log(err)
     );
   }

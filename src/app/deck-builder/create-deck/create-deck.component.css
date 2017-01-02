@@ -1,12 +1,23 @@
 #btn-sumbit-deck {
     display: inline-block;
 }
+
+.btn {
+    margin: 10px;
+}
+
+.radio-button {
+    margin-right: 10px;
+}
+
 .radio {
     display: inline-block;
 }
+
 input.ng-touched.ng-invalid {
     border: 1px solid red;
 }
+
 input.ng-touched.ng-valid {
     border: 1px solid green;
 }
