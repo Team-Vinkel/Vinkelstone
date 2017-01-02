@@ -1,63 +1,16 @@
 <div class="row">
   <div class="col-md-6">
     <h1>Available cards:</h1>
-    <div class="col-md-4 cards-list" *ngFor="let card of cards" [ngSwitch]="card.type">
-      <div class="thumbnail" *ngSwitchCase="'Minion'">
+    <div class="col-md-4 cards-list" *ngFor="let card of cards">
+      <div class="thumbnail">
         <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
         <div class="caption">
           <h3>{{card.name}}</h3>
           <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4>Health: {{card.health}}</h4>
-          <h4>Attack: {{card.attack}}</h4>
-          <h4 id="description">Description:
-            <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
-          </h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'Spell'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4 id="description">Description:
-            <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
-          </h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'Weapon'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4>Health: {{card.health}}</h4>
-          <h4>Attack: {{card.attack}}</h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'HeroPower'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4 id="description">Description:
+          <h4 *ngIf="card.manaCost">Mana cost: {{card.manaCost}}</h4>
+          <h4 *ngIf="card.health">Health: {{card.health}}</h4>
+          <h4 *ngIf="card.attack">Attack: {{card.attack}}</h4>
+          <h4 *ngIf="card.description" id="description">Description:
             <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
           </h4>
           <h4>Creator: {{card.creator}}</h4>
@@ -71,63 +24,16 @@
   </div>
   <div class="col-md-6">
     <h1 *ngIf="cardsForDeck.length">Cards for deck:</h1>
-    <div class="col-md-4 cards-list" *ngFor="let card of cardsForDeck" [ngSwitch]="card.type">
-      <div class="thumbnail" *ngSwitchCase="'Minion'">
+    <div class="col-md-4 cards-list" *ngFor="let card of cardsForDeck">
+      <div class="thumbnail">
         <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
         <div class="caption">
           <h3>{{card.name}}</h3>
           <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4>Health: {{card.health}}</h4>
-          <h4>Attack: {{card.attack}}</h4>
-          <h4 id="description">Description:
-            <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
-          </h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'Spell'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4 id="description">Description:
-            <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
-          </h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'Weapon'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4>Health: {{card.health}}</h4>
-          <h4>Attack: {{card.attack}}</h4>
-          <h4>Creator: {{card.creator}}</h4>
-          <p>
-            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
-            <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
-          </p>
-        </div>
-      </div>
-      <div class="thumbnail" *ngSwitchCase="'HeroPower'">
-        <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
-        <div class="caption">
-          <h3>{{card.name}}</h3>
-          <h4>Type: {{card.type}}</h4>
-          <h4>Mana cost: {{card.manaCost}}</h4>
-          <h4 id="description">Description:
+          <h4 *ngIf="card.manaCost">Mana cost: {{card.manaCost}}</h4>
+          <h4 *ngIf="card.health">Health: {{card.health}}</h4>
+          <h4 *ngIf="card.attack">Attack: {{card.attack}}</h4>
+          <h4 *ngIf="card.description" id="description">Description:
             <p [innerHTML]="card.description | markdownBold | markdownCursive"></p>
           </h4>
           <h4>Creator: {{card.creator}}</h4>
