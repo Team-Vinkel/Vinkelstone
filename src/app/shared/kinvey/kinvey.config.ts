@@ -30,9 +30,6 @@ export class KinveyConfig {
         };
     }
 
-    public get USERS_URL(){
-        return this._USERS_URL;
-    }
 
     public get LOGIN_USER_URL(){
         return `${this._USERS_URL}login`;
@@ -47,6 +44,10 @@ export class KinveyConfig {
             name: this._AUTHORIZATION_HEADER_NAME,
             value: `${this._AUTHORIZATION_TYPE} ${this._AUTH_STRING_USERS}`
         };
+    }
+
+    public  getUsersUrl(filter?: string) {
+        return `${this._USERS_URL}${filter ? '?query=' + filter : ''}`;
     }
 
     public getCollectionUrl(collectionName: string, filter?: string) {

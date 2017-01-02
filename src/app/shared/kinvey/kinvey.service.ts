@@ -47,7 +47,7 @@ export class KinveyService {
     }
 
     public registerUser(user: Object) {
-        let url = this._config.USERS_URL;
+        let url = this._config.getUsersUrl();
         let auth = this._config.AUTH_HEADER_USERS;
         let contentType = this._config.CONTENT_TYPE_HEADER;
 
@@ -69,6 +69,17 @@ export class KinveyService {
         headers.append(contentType.name, contentType.value);
 
         return this._http.post(url, JSON.stringify(user), { headers })
+            .map(res => res.json());
+    }
+
+    public getUsersByFilter(filter: string) {
+        let url = this._config.getUsersUrl(filter);
+        let auth = this._config.AUTH_HEADER_COMMON;
+
+        let headers = new Headers();
+        headers.append(auth.name, auth.value);
+
+        return this._http.get(url, { headers })
             .map(res => res.json());
     }
 
