@@ -71,4 +71,15 @@ export class KinveyService {
         return this._http.post(url, JSON.stringify(user), { headers })
             .map(res => res.json());
     }
+
+    public confirmIdentity(userToken: string) {
+        let url = this._config.CHECK_USER_IDENTITY_URL;
+        let auth = this._config.AUTH_HEADER_COMMON;
+
+        let headers = new Headers();
+        headers.append(auth.name, `Kinvey ${userToken}`);
+
+        return this._http.get(url, { headers })
+            .map(res => res.json());
+    }
 }
