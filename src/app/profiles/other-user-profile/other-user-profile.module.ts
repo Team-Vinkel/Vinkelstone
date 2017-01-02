@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import { PipesModule } from './../../pipes/pipes.module';
 
 import { OtherUserProfileComponent } from './other-user-profile.component';
 import { OtherUserCardsComponent } from './other-user-cards/other-user-cards.component';
@@ -7,7 +10,9 @@ import { OtherUserDecksComponent } from './other-user-decks/other-user-decks.com
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PipesModule,
+    RouterModule
   ],
   declarations: [OtherUserProfileComponent, OtherUserCardsComponent, OtherUserDecksComponent]
 })

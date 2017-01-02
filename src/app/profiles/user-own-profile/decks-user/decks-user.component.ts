@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../auth/auth.service';
-import { DeckBuilderService } from '../shared/deck-builder.service';
+import { AuthService } from '../../../auth/auth.service';
+import { DeckBuilderService } from '../../../deck-builder/shared/deck-builder.service';
 
-import { IDeck } from '../shared/deck';
+import { IDeck } from '../../../deck-builder/shared/deck';
 
 @Component({
   selector: 'app-decks-user',
