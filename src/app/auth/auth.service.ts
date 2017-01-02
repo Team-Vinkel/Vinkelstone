@@ -48,7 +48,19 @@ export class AuthService {
             if (!user.authtoken) {
                 this._isUserLoggedIn.next(false);
             } else {
-                this._isUserLoggedIn.next(true);
+                this._kinveyService.confirmIdentity(user.authtoken)
+                    .subscribe(
+                        res => {
+                            if (res._body) {
+                                this._isUserLoggedIn.next(false);
+                            } else {
+                                user.username = res.username;
+                                localStorage.setItem('user', JSON.stringify(user));
+                                this._isUserLoggedIn.next(true);
+                            }
+                        },
+                        err => this._isUserLoggedIn.next(false)
+                    );
             }
         }
     }

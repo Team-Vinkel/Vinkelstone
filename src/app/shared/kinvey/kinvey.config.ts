@@ -38,6 +38,10 @@ export class KinveyConfig {
         return `${this._USERS_URL}login`;
     }
 
+    public get CHECK_USER_IDENTITY_URL(){
+        return `${this._USERS_URL}_me`;
+    }
+
     public get AUTH_HEADER_USERS() {
         return {
             name: this._AUTHORIZATION_HEADER_NAME,
