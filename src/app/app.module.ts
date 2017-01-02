@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SimpleNotificationsModule } from 'angular2-notifications'
 
 import { KinveyConfig } from './shared/kinvey/kinvey.config';
 import { KinveyService } from './shared/kinvey/kinvey.service';
@@ -46,7 +47,8 @@ import { AboutComponent } from './about/about.component';
         AuthModule,
         CardsModule,
         DeckBuilderModule,
-        PipesModule
+        PipesModule,
+        SimpleNotificationsModule
     ],
     providers: [
         KinveyService,

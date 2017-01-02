@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { NotificationsService } from 'angular2-notifications'
+
 import { DeckBuilderService } from '../shared/deck-builder.service';
 import { CardService } from '../../cards/shared/card.service';
 import { AuthService } from '../../auth/auth.service';
@@ -21,7 +23,8 @@ export class CreateDeckComponent implements OnInit {
     private _deckBuilderService: DeckBuilderService,
     private _cardService: CardService,
     private _authService: AuthService,
-    private _router: Router) {
+    private _router: Router,
+    private _notificationService: NotificationsService) {
 
   }
 
@@ -39,9 +42,10 @@ export class CreateDeckComponent implements OnInit {
   createDeck() {
     this._deckBuilderService.createDeck(this.deck).subscribe(
       res => {
-        this._router.navigateByUrl(`/decks/${res._id}`);
+        this._notificationService.success('Deck creation', 'Your deck was created successfuly!');
+        setTimeout(() => this._router.navigate([`/decks/${res._id}`]), 2000);
       },
-      err => console.log(err)
+      err => this._notificationService.error('Deck creation', 'An error occured while creating your deck!')
     );
   }
 }

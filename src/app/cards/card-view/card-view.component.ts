@@ -32,7 +32,6 @@ export class CardViewComponent implements OnInit {
           if (res.length > 0) {
             [ this.card ] = res;
             this.imageStyle = this._sanitization.bypassSecurityTrustStyle(`url(${this.card.pictureUrl})`);
-            console.log(this.card);
           } else {
             // Error handling
           }
