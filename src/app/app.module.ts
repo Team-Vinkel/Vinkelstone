@@ -25,13 +25,15 @@ import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
 import { DeckBuilderModule } from './deck-builder/deck-builder.module';
 import { PipesModule } from './pipes/pipes.module';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         DecksUserComponent,
-        CardsUserComponent
+        CardsUserComponent,
+        FaqComponent
     ],
     imports: [
         BrowserModule,
