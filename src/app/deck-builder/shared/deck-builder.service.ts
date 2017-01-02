@@ -12,13 +12,13 @@ const CARDS_FOR_DECK_STORAGE = 'cardsForDeck';
 
 @Injectable()
 export class DeckBuilderService {
-    private cardsForDeck: string[];
+    private cardsForDeck: ICard[];
 
     constructor(private _kinvey: KinveyService) {
         this.cardsForDeck = [];
     }
 
-    public getCardsForDeck(): string[] {
+    public getCardsForDeck(): ICard[] {
         let storageCards = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
         if (storageCards === null) {
             this.cardsForDeck = [];
@@ -26,13 +26,13 @@ export class DeckBuilderService {
         return this.cardsForDeck;
     }
 
-    public addCardForDeck(cardId: string) {
-        this.cardsForDeck.push(cardId);
+    public addCardForDeck(card: ICard) {
+        this.cardsForDeck.push(card);
         sessionStorage.setItem(CARDS_FOR_DECK_STORAGE, JSON.stringify(this.cardsForDeck));
     }
 
-    public removeCardForDeck(cardId: string) {
-        let index = this.cardsForDeck.indexOf(cardId);
+    public removeCardForDeck(card: ICard) {
+        let index = this.cardsForDeck.indexOf(card);
         if (index > -1) {
             this.cardsForDeck.splice(index, 1);
         }

@@ -24,6 +24,7 @@ export class DeckViewComponent implements OnInit {
 
   ngOnInit() {
     this.deck = {};
+    this.cards = [];
 
     this._route.params.subscribe(params => {
       let deckId = params['id'];
@@ -34,12 +35,20 @@ export class DeckViewComponent implements OnInit {
   private _listCardsInDeck(deckId: string) {
     this._deckBuilderService.getDecksByIds([deckId])
       .concatMap(decks => {
-        [ this.deck ] = decks;
+        [this.deck] = decks;
         return this._cardService.getCardsByIds(this.deck.cards);
       })
       .subscribe(
-        res => this.cards = res,
-        err => console.log(err)
+      res => {
+        for (let cardId of this.deck.cards) {
+          for (let card of res) {
+            if (card._id === cardId) {
+              this.cards.push(card);
+            }
+          }
+        }
+      },
+      err => console.log(err)
       );
   }
 }

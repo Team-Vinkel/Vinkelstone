@@ -26,9 +26,13 @@ export class CreateDeckComponent implements OnInit {
   }
 
   ngOnInit() {
+    let cardIds: string[] = [];
+    this._deckBuilderService.getCardsForDeck()
+      .forEach(x => cardIds.push(x._id))
+
     this.deck = {
       creator: this._authService.getCurrentUsername(),
-      cards: this._deckBuilderService.getCardsForDeck()
+      cards: cardIds
     };
   }
 
