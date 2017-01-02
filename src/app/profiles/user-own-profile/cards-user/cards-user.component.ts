@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../auth/auth.service';
-import { CardService } from '../shared/card.service';
+import { AuthService } from '../../../auth/auth.service';
+import { CardService } from '../../../cards/shared/card.service';
 
-import { ICard } from '../shared/card';
+import { ICard } from '../../../cards/shared/card';
 
 @Component({
   selector: 'app-cards-user',

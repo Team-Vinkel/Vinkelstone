@@ -40,6 +40,11 @@ export class CreateDeckComponent implements OnInit {
   }
 
   createDeck() {
+    if (this.deck.cards.length <= 0) {
+      this._notificationService.error('Deck creation', 'You can not create an empty deck!');
+      return;
+    }
+
     this._deckBuilderService.createDeck(this.deck).subscribe(
       res => {
         this._notificationService.success('Deck creation', 'Your deck was created successfuly!');

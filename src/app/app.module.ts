@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { SimpleNotificationsModule } from 'angular2-notifications'
+
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { KinveyConfig } from './shared/kinvey/kinvey.config';
 import { KinveyService } from './shared/kinvey/kinvey.service';
@@ -17,14 +18,13 @@ import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
-import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
-import { CardsUserComponent } from './cards/cards-user/cards-user.component';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
 import { DeckBuilderModule } from './deck-builder/deck-builder.module';
+import { ProfilesModule } from './profiles/profiles.module';
+
 import { PipesModule } from './pipes/pipes.module';
 import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
@@ -33,8 +33,6 @@ import { AboutComponent } from './about/about.component';
     declarations: [
         AppComponent,
         HomeComponent,
-        DecksUserComponent,
-        CardsUserComponent,
         FaqComponent,
         AboutComponent
     ],
@@ -47,6 +45,7 @@ import { AboutComponent } from './about/about.component';
         AuthModule,
         CardsModule,
         DeckBuilderModule,
+        ProfilesModule,
         PipesModule,
         SimpleNotificationsModule
     ],

@@ -15,29 +15,27 @@ export const profilesRoutes: Routes = [
         path: 'profile',
         component: UserOwnProfileComponent,
         canActivate: [UserIsLoggedGuard],
-        children: [
-            {
-                path: 'cards',
-                component: CardsUserComponent
-            },
-            {
-                path: 'decks',
-                component: DecksUserComponent
-            }
-        ]
+    },
+    {
+        path: 'profile/cards',
+        component: CardsUserComponent,
+        canActivate: [UserIsLoggedGuard]
+    },
+    {
+        path: 'profile/decks',
+        component: DecksUserComponent,
+        canActivate: [UserIsLoggedGuard]
     },
     {
         path: 'users/:username',
-        component: OtherUserProfileComponent,
-        children: [
-            {
-                path: 'cards',
-                component: OtherUserCardsComponent
-            },
-            {
-                path: 'decks',
-                component: OtherUserDecksComponent
-            }
-        ]
+        component: OtherUserProfileComponent
+    },
+    {
+        path: 'users/:username/cards',
+        component: OtherUserCardsComponent
+    },
+    {
+        path: 'users/:username/decks',
+        component: OtherUserDecksComponent
     }
 ];

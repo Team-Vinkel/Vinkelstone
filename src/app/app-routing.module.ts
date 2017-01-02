@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { cardsRoutes } from './cards/cards-routes';
 import { deckBuilderRoutes } from './deck-builder/deck-builder-routes';
+import { profilesRoutes } from './profiles/profiles-routes';
 
 import { HomeComponent } from './home/home.component';
 import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     },
     ...deckBuilderRoutes,
     ...cardsRoutes,
+    ...profilesRoutes,
     {
         path: 'sign-up',
         canActivate: [ UserIsNotLoggedGuard ],
@@ -32,16 +34,6 @@ const appRoutes: Routes = [
         path: 'sign-in',
         canActivate: [ UserIsNotLoggedGuard ],
         component: SignInComponent
-    },
-    {
-        path: 'profile/decks',
-        component: DecksUserComponent,
-        canActivate: [ UserIsLoggedGuard ]
-    },
-    {
-        path: 'profile/cards',
-        component: CardsUserComponent,
-        canActivate: [ UserIsLoggedGuard ]
     },
     {
         path: 'faq',
