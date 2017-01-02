@@ -15,7 +15,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -31,7 +31,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -46,7 +46,7 @@
           <h4>Attack: {{card.attack}}</h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -62,7 +62,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-primary" role="button" (click)="addCardToList(card)">Add card for deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -85,7 +85,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -101,7 +101,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -116,7 +116,7 @@
           <h4>Attack: {{card.attack}}</h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
@@ -132,7 +132,7 @@
           </h4>
           <h4>Creator: {{card.creator}}</h4>
           <p>
-            <a class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
+            <a *ngIf="userLoggedIn" class="btn btn-danger" role="button" (click)="removeCardFromList(card)">Remove card from deck</a>
             <a class="btn btn-default" role="button" routerLink="/cards/{{card._id}}">View card details</a>
           </p>
         </div>
