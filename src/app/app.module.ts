@@ -15,26 +15,23 @@ import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
+
+import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
+import { CardsUserComponent } from './cards/cards-user/cards-user.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
+import { DeckBuilderModule } from './deck-builder/deck-builder.module';
 import { PipesModule } from './pipes/pipes.module';
-
-import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
-import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        DeckBuilderComponent,
-        CreateDeckComponent,
-        DeckViewComponent,
-        DecksUserComponent
+        DecksUserComponent,
+        CardsUserComponent
     ],
     imports: [
         BrowserModule,
@@ -44,6 +41,7 @@ import { DecksUserComponent } from './deck-builder/decks-user/decks-user.compone
         AppRoutingModule,
         AuthModule,
         CardsModule,
+        DeckBuilderModule,
         PipesModule
     ],
     providers: [

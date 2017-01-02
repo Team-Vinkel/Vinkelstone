@@ -2,12 +2,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { cardsRoutes } from './cards/cards-routes';
+import { deckBuilderRoutes } from './deck-builder/deck-builder-routes';
 
 import { HomeComponent } from './home/home.component';
-import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
-import { DeckViewComponent } from './deck-builder/deck-view/deck-view.component';
 import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
-import { CreateDeckComponent } from './deck-builder/create-deck/create-deck.component';
 import { CardsUserComponent } from './cards/cards-user/cards-user.component';
 
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
@@ -21,19 +19,7 @@ const appRoutes: Routes = [
         path: 'home',
         component: HomeComponent
     },
-    {
-        path: 'decks',
-        component: DeckBuilderComponent
-    },
-    {
-        path: 'decks/:id',
-        component: DeckViewComponent
-    },
-    {
-        path: 'deck-create',
-        component: CreateDeckComponent,
-        canActivate: [ UserIsLoggedGuard ],
-    },
+    ...deckBuilderRoutes,
     ...cardsRoutes,
     {
         path: 'sign-up',

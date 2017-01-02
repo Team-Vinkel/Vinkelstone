@@ -15,7 +15,7 @@ import { CardViewComponent } from './card-view/card-view.component';
     PipesModule,
     RouterModule
   ],
-  declarations: [CardsListComponent, CardsUserComponent, CardViewComponent],
+  declarations: [CardsListComponent, CardViewComponent],
   exports: [ CreateCardModule ]
 })
 export class CardsModule { }
