@@ -26,6 +26,7 @@ import { CardsModule } from './cards/cards.module';
 import { DeckBuilderModule } from './deck-builder/deck-builder.module';
 import { PipesModule } from './pipes/pipes.module';
 import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { FaqComponent } from './faq/faq.component';
         HomeComponent,
         DecksUserComponent,
         CardsUserComponent,
-        FaqComponent
+        FaqComponent,
+        AboutComponent
     ],
     imports: [
         BrowserModule,
