@@ -19,7 +19,10 @@ export class DeckBuilderService {
     }
 
     public getCardsForDeck(): string[] {
-        this.cardsForDeck = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
+        let storageCards = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
+        if (storageCards === null) {
+            this.cardsForDeck = [];
+        }
         return this.cardsForDeck;
     }
 
