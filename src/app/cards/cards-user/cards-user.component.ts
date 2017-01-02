@@ -12,6 +12,7 @@ import { ICard } from '../shared/card';
 })
 export class CardsUserComponent implements OnInit {
   public cards: ICard[];
+  public currentUser: string;
 
   constructor(
     private _cardService: CardService,
@@ -20,13 +21,12 @@ export class CardsUserComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.currentUser = this._authService.getCurrentUsername();
     this._listCurrentUserCards();
   }
 
   private _listCurrentUserCards() {
-    let currentUser = this._authService.getCurrentUsername();
-
-    this._cardService.getCardsByUser(currentUser)
+    this._cardService.getCardsByUser(this.currentUser)
       .subscribe(
         res => this.cards = res,
         err => console.log(err)

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 
 import { KinveyService } from './../../shared/kinvey/kinvey.service';
 
@@ -8,6 +8,7 @@ import { IDeck } from './deck';
 import { DeckType } from './enums/deck-type';
 
 const DECK_COLLECTION_NAME = 'decks';
+const CARDS_FOR_DECK_STORAGE = 'cardsForDeck';
 
 @Injectable()
 export class DeckBuilderService {
@@ -18,13 +19,21 @@ export class DeckBuilderService {
     }
 
     public getCardsForDeck(): string[] {
-        let cards: string[] = JSON.parse(sessionStorage.getItem('cardsForDeck'));
+        let cards: string[] = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
         return cards;
     }
 
     public addCardForDeck(cardId: string) {
         this.cardsForDeck.push(cardId);
-        sessionStorage.setItem('cardsForDeck', JSON.stringify(this.cardsForDeck));
+        sessionStorage.setItem(CARDS_FOR_DECK_STORAGE, JSON.stringify(this.cardsForDeck));
+    }
+
+    public removeCardForDeck(cardId: string) {
+        let index = this.cardsForDeck.indexOf(cardId);
+        if (index > -1) {
+            this.cardsForDeck.splice(index, 1);
+        }
+        sessionStorage.setItem(CARDS_FOR_DECK_STORAGE, JSON.stringify(this.cardsForDeck));
     }
 
     public getAllDecks(): Observable<IDeck[]> {
