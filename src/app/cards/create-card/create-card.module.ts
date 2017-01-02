@@ -14,6 +14,12 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule
   ],
-  declarations: [ CreateHeroPowerComponent, CreateMinionComponent, CreateSpellComponent, CreateWeaponComponent, CreateCardComponent]
+  declarations: [
+    CreateHeroPowerComponent,
+    CreateMinionComponent,
+    CreateSpellComponent,
+    CreateWeaponComponent,
+    CreateCardComponent
+  ]
 })
 export class CreateCardModule { }

@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+import { NotificationsService } from 'angular2-notifications'
+
 import { CardService } from './../../shared/card.service';
 import { AuthService } from '../../../auth/auth.service';
 
@@ -14,12 +16,13 @@ import { ICard } from '../../shared/card';
 })
 
 export class CreateSpellComponent implements OnInit {
-
   card: ICard;
+
   constructor(
     private _cardService: CardService,
     private _authService: AuthService,
-    private _router: Router) {
+    private _router: Router,
+    private _notificationService: NotificationsService) {
   }
 
   ngOnInit() {
@@ -34,12 +37,13 @@ export class CreateSpellComponent implements OnInit {
       .subscribe(
       res => {
         if (res._body) {
-          // Error handling
+          this._notificationService.error("Card creation", "Error occured while creating your card!")
         } else {
-          setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 1000);
+          this._notificationService.success("Card creation", "Card successfuly created!")
+          setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 2000);
         }
       },
-      err => console.log(err)
+      err => this._notificationService.error("Card creation", "Error occured while creating your card!")
       );
   }
 }

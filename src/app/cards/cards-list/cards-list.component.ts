@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NotificationsService } from 'angular2-notifications'
+
 import { CardService } from './../shared/card.service';
 import { DeckBuilderService } from '../../deck-builder/shared/deck-builder.service'
 import { AuthService } from '../../auth/auth.service'
@@ -20,20 +22,21 @@ export class CardsListComponent implements OnInit {
   constructor(
     private _cardService: CardService,
     private _deckBuilderService: DeckBuilderService,
-    private _authService: AuthService) {
+    private _authService: AuthService,
+    private _notificationService: NotificationsService) {
   }
 
   addCardToList(card: ICard) {
     let maxCardsInDeck = 30;
     let maxCardsRepetitions = 2;
     if (this.cardsForDeck.length >= maxCardsInDeck) {
-      console.log('can not add more than 30!');
+      this._notificationService.error('Deck error!', 'You can not add more than 30 cards!')
       return;
     }
 
     let repeatedCard = this._countDuplicateCards(card._id);
     if (repeatedCard >= maxCardsRepetitions) {
-      console.log('max repeated cards in a deck are 2');
+      this._notificationService.error('Deck error!', 'A card can not be added more than two times!')
       return;
     }
 
