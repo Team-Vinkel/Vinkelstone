@@ -8,20 +8,28 @@ export class UserIsLoggedGuard implements CanActivate {
     private _isUserLoggedIn: boolean;
 
     constructor(private _authService: AuthService, private _router: Router) {
+        console.log('here');
         this._authService.isUserLoggedIn.subscribe(
             res => {
                 this._isUserLoggedIn = res;
             }
         );
-        this._authService.checkUserLogIn();
     }
 
     public canActivate() {
-        if (this._isUserLoggedIn) {
-           return true;
+        if (this._authService.currentUserState) {
+            return Promise.resolve(true);
         } else {
-            this._router.navigate(['/home']);
-            return false;
+            return this._authService.checkUserLogIn()
+                .then(() => {
+                    if (this._isUserLoggedIn) {
+                        return true;
+                    } else {
+                        this._router.navigate(['/home']);
+                        return false;
+                    }
+                }
+                );
         }
     }
 }

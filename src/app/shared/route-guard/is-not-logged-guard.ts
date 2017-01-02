@@ -13,15 +13,22 @@ export class UserIsNotLoggedGuard implements CanActivate {
                 this._isUserLoggedIn = res;
             }
         );
-        this._authService.checkUserLogIn();
     }
 
     public canActivate() {
-        if (!this._isUserLoggedIn) {
-           return true;
+        if (this._authService.currentUserState) {
+            return Promise.resolve(true);
         } else {
-            this._router.navigate(['/home']);
-            return false;
+            return this._authService.checkUserLogIn()
+                .then(() => {
+                    if (!this._isUserLoggedIn) {
+                        return true;
+                    } else {
+                        this._router.navigate(['/home']);
+                        return false;
+                    }
+                }
+                );
         }
     }
 }

@@ -11,6 +11,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class AuthService {
     private _isUserLoggedIn: Subject<boolean>;
+    private _userLoggedInState: boolean;
 
     constructor(private _kinveyService: KinveyService) {
         this._isUserLoggedIn = new Subject<boolean>();
@@ -28,41 +29,65 @@ export class AuthService {
 
     public logoutUser() {
         localStorage.removeItem('user');
-        this._isUserLoggedIn.next(false);
+        this._userLoggedInState = false;
+        this.emitCurrentUserState();
+    }
+
+    public get currentUserState() {
+        return this._userLoggedInState;
     }
 
     public get isUserLoggedIn() {
         return this._isUserLoggedIn.asObservable();
     }
 
+    public emitCurrentUserState() {
+        this._isUserLoggedIn.next(this._userLoggedInState);
+    }
+
     public setIsUserLoggedIn() {
-        this._isUserLoggedIn.next(true);
+        this._userLoggedInState = true;
+        this.emitCurrentUserState();
     }
 
     public checkUserLogIn() {
-        let userString = localStorage.getItem('user');
-        if (!userString) {
-            this._isUserLoggedIn.next(false);
-        } else {
-            let user = JSON.parse(userString);
-            if (!user.authtoken) {
-                this._isUserLoggedIn.next(false);
+        let promise = new Promise<any>((resolve, reject) => {
+            let userString = localStorage.getItem('user');
+            if (!userString) {
+                this._userLoggedInState = false;
+                this.emitCurrentUserState();
+                resolve();
             } else {
-                this._kinveyService.confirmIdentity(user.authtoken)
-                    .subscribe(
+                let user = JSON.parse(userString);
+                if (!user.authtoken) {
+                    this.logoutUser();
+                    resolve();
+                } else {
+                    this._kinveyService.confirmIdentity(user.authtoken)
+                        .subscribe(
                         res => {
                             if (res._body) {
-                                this._isUserLoggedIn.next(false);
+                                this.logoutUser();
+                                resolve();
                             } else {
                                 user.username = res.username;
                                 localStorage.setItem('user', JSON.stringify(user));
-                                this._isUserLoggedIn.next(true);
+                                this.setIsUserLoggedIn();
+                                resolve();
                             }
                         },
-                        err => this._isUserLoggedIn.next(false)
-                    );
+                        err => {
+                            this._userLoggedInState = false;
+                            this.emitCurrentUserState();
+                            resolve();
+                        }
+                        );
+                }
             }
-        }
+        });
+
+        return promise;
+
     }
 
     public getCurrentUsername() {
