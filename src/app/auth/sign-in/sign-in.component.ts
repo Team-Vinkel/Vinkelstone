@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { NotificationsService } from 'angular2-notifications'
+import { NotificationsService } from 'angular2-notifications';
 
 import { AuthService } from './../auth.service';
 
