@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CardService } from './../shared/card.service';
 import { DeckBuilderService } from '../../deck-builder/shared/deck-builder.service'
+import { AuthService } from '../../auth/auth.service'
 
 import { ICard } from './../shared/card';
 
@@ -13,8 +14,12 @@ import { ICard } from './../shared/card';
 export class CardsListComponent implements OnInit {
   public cards: ICard[];
   public cardsForDeck: ICard[];
+  public userLoggedIn: boolean;
 
-  constructor(private _cardService: CardService, private _deckBuilderService: DeckBuilderService) {
+  constructor(
+    private _cardService: CardService,
+    private _deckBuilderService: DeckBuilderService,
+    private _authService: AuthService) {
   }
 
   addCardToList(card: ICard) {
@@ -28,6 +33,13 @@ export class CardsListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._authService.isUserLoggedIn
+      .subscribe(
+        res => this.userLoggedIn = res,
+        err => console.log(err)
+      );
+    this._authService.checkUserLogIn();
+
     this._refreshDeckCardList();
     this.cards = [];
     this.cardsForDeck = [];
