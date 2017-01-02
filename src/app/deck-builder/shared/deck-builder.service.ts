@@ -19,8 +19,8 @@ export class DeckBuilderService {
     }
 
     public getCardsForDeck(): string[] {
-        let cards: string[] = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
-        return cards;
+        this.cardsForDeck = JSON.parse(sessionStorage.getItem(CARDS_FOR_DECK_STORAGE));
+        return this.cardsForDeck;
     }
 
     public addCardForDeck(cardId: string) {

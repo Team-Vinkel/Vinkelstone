@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { PipesModule } from '../../app/pipes/pipes.module'
+
 import { DeckBuilderComponent } from './deck-builder.component';
 import { DeckViewComponent } from './deck-view/deck-view.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
@@ -13,7 +15,8 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
     CommonModule,
     RouterModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    PipesModule
   ],
   declarations: [ CreateDeckComponent, DeckViewComponent, DeckBuilderComponent ]
 })

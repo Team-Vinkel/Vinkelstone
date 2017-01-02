@@ -28,15 +28,15 @@ export class CardsListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._refreshDeckCardList();
     this.cards = [];
     this.cardsForDeck = [];
-    this._refreshDeckCardList();
 
     this._cardService
       .getAllCards()
       .subscribe(
-      res => this.cards = res,
-      err => console.log(err)
+        res => this.cards = res,
+        err => console.log(err)
       );
   }
 
