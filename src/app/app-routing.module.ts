@@ -7,6 +7,8 @@ import { deckBuilderRoutes } from './deck-builder/deck-builder-routes';
 import { HomeComponent } from './home/home.component';
 import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
 import { CardsUserComponent } from './cards/cards-user/cards-user.component';
+import { FaqComponent} from './faq/faq.component';
+import { AboutComponent} from './about/about.component';
 
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
@@ -40,6 +42,14 @@ const appRoutes: Routes = [
         path: 'profile/cards',
         component: CardsUserComponent,
         canActivate: [ UserIsLoggedGuard ]
+    },
+    {
+        path: 'faq',
+        component: FaqComponent
+    },
+    {
+        path: 'about',
+        component: AboutComponent
     },
     // Default(fallback) routes
     {

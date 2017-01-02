@@ -1,8 +1,8 @@
 <div class="container text-center">
   <form (ngSubmit)="createDeck()" method="POST">
     <div class="form-group" data-toggle="buttons">
-      <label for="deckName">Deck name</label>
-      <input type="text" class="form-control" id="deckName" name="name" placeholder="Deck name" 
+      <label for="deck-name">Deck name</label>
+      <input type="text" class="form-control" id="deck-name" name="name" placeholder="Deck name"
       [(ngModel)]="deck.name"
       required
       pattern=".{4,16}"
@@ -10,31 +10,40 @@
     </div>
     <div class="btn-group">
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Druid" [(ngModel)]="deck.type" required>Druid
+          <input class="radio-button" type="radio" name="type" value="Druid" [(ngModel)]="deck.type" required>
+          <span class="radio-text">Druid</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Hunter" [(ngModel)]="deck.type">Hunter
+          <input class="radio-button" type="radio" name="type" value="Hunter" [(ngModel)]="deck.type">
+          <span class="radio-text">Hunter</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Mage" [(ngModel)]="deck.type">Mage
+          <input class="radio-button" type="radio" name="type" value="Mage" [(ngModel)]="deck.type">
+          <span class="radio-text">Mage</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Paladin" [(ngModel)]="deck.type">Paladin
+          <input class="radio-button" type="radio" name="type" value="Paladin" [(ngModel)]="deck.type">
+          <span class="radio-text">Paladin</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Priest" [(ngModel)]="deck.type">Priest
+          <input class="radio-button" type="radio" name="type" value="Priest" [(ngModel)]="deck.type">
+          <span class="radio-text">Priest</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Rogue" [(ngModel)]="deck.type">Rogue
+          <input class="radio-button" type="radio" name="type" value="Rogue" [(ngModel)]="deck.type">
+          <span class="radio-text">Rogue</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Shaman" [(ngModel)]="deck.type">Shaman
+          <input class="radio-button" type="radio" name="type" value="Shaman" [(ngModel)]="deck.type">
+          <span class="radio-text">Shaman</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Warlock" [(ngModel)]="deck.type">Warlock
+          <input class="radio-button" type="radio" name="type" value="Warlock" [(ngModel)]="deck.type">
+          <span class="radio-text">Warlock</span>
         </label>
         <label class="btn btn-warning">
-          <input type="radio" name="type" value="Warrior" [(ngModel)]="deck.type">Warrior
+          <input class="radio-button" type="radio" name="type" value="Warrior" [(ngModel)]="deck.type">
+          <span class="radio-text">Warrior</span>
         </label>
     </div>
     <button id="btn-sumbit-deck" type="submit" class="btn btn-default">Submit</button>
