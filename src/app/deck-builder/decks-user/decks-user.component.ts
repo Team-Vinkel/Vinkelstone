@@ -10,6 +10,7 @@ import { IDeck } from '../shared/deck';
   templateUrl: './decks-user.component.html',
   styleUrls: ['./decks-user.component.css']
 })
+
 export class DecksUserComponent implements OnInit {
   public decks: IDeck[];
 
@@ -20,6 +21,8 @@ export class DecksUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.decks = [];
+
     this._listCurrentUserDecks();
   }
 

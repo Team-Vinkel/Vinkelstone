@@ -21,6 +21,7 @@ export class CardsUserComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.cards = [];
     this.currentUser = this._authService.getCurrentUsername();
     this._listCurrentUserCards();
   }
