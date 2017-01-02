@@ -38,7 +38,10 @@ export class DeckViewComponent implements OnInit {
         return this._cardService.getCardsByIds(this.deck.cards);
       })
       .subscribe(
-        res => this.cards = res,
+        res => {
+          console.log(res);
+          this.cards = res
+        },
         err => console.log(err)
       );
   }
