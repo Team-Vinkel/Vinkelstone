@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { KinveyService } from './../../shared/kinvey/kinvey.service';
 
 @Injectable()
-export class UsersService {
+export class UserService {
 
   constructor(private _kinveyService: KinveyService) {
   }
