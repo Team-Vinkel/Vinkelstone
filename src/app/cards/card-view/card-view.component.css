@@ -1,0 +1,154 @@
+@font-face {
+    font-family: "Franklin Pro Narrow Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../../../assets/fonts/Franklin Pro Narrow Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Belwe Bd BT";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../../../assets/fonts/Belwe-bd-bt-bold.ttf") format("truetype");
+}
+
+.main{
+    margin: 0 auto;
+    width: 400px;
+}
+.main .button {
+    margin-top: 1em;
+    text-align: center;
+}
+.main .button input{
+    font-family: 'Franklin Pro Narrow Medium';
+    font-size: 22pt;
+    background: royalblue none repeat scroll 0 0;
+    border: 0 none;
+    color: white;
+    font-weight: bold;
+    padding: 0.25em 0.75em;
+    text-decoration: none;
+}
+.main .button input:hover{
+    background: #5179f1;
+}
+
+
+#matches span{
+    display: block;
+
+}
+
+#text{
+    width: 22em;
+
+}
+
+.card{
+    width: 400px;
+    height: 570px;
+    position: relative;
+}
+
+.card .cardfg, .card .textsvg{
+    width: 400px;
+    height: 570px;
+    position: absolute;
+}
+
+.card .cardbg{
+    background-repeat: no-repeat;
+    height: 320px;
+    left: 50px;
+    position: absolute;
+    top: 43px;
+    width: 300px;
+}
+
+.Minion .cardbg{
+    background-position: 0px 0;
+    background-size: auto 256px;
+}
+.Minion .cardbg.bg1{ clip: rect(0px, 201px, 50px, 108px); }
+.Minion .cardbg.bg2{ clip: rect(15px, 221px, 50px, 92px); }
+.Minion .cardbg.bg3{ clip: rect(30px, 271px, 350px, 0px); }
+
+.Spell .cardbg{
+    background-position: 19px 40px;
+    background-size: 280px auto;
+}
+.Spell  .cardbg.bg1{ clip: rect(30px, 300px, 350px, 0px); }
+
+.Weapon .cardbg{
+    background-position: 19px 15px;
+    background-size: 320px auto;
+}
+.Weapon  .cardbg.bg1{ clip: rect(24px, 300px, 350px, 0px); }
+
+.HeroPower .cardbg{
+    width: 159px;
+    height: 149px;
+    left: 118px;
+    top: 87px;
+	background-size: auto 149px;
+}
+
+svg text{
+    color: white;
+    fill: white;
+    font-family: "Belwe Bd BT";
+    font-size: 18pt;
+    text-anchor: middle;
+    text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
+}
+
+.smalltitle svg text {
+    font-size: 12pt;
+}
+
+.cardtext{
+    font-family: 'Franklin Pro Narrow Medium';
+    font-size: 24px;
+    text-align: center;
+
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.92, 1);
+}
+
+.Minion .cardtext{
+    width: 288px;
+    left: 205px;
+    top: 446px;
+}
+.Spell .cardtext{
+    width: 258px;
+    left: 205px;
+    top: 444px;
+}
+.Weapon .cardtext{
+    color: white;
+    width: 258px;
+    left: 205px;
+    top: 430px;
+}
+.HeroPower .cardtext{
+    left: 198px;
+    top: 400px;
+    width: 251px;
+}
+
+.cardno{
+    font-family: "Belwe Bd BT";
+    font-size: 82px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow:
+        -3px -3px 0.5px #000, 3px -3px 0.5px #000, -3px  3px 0.5px #000, 3px  3px 0.5px #000,
+        4px 0 0.5px #000,-4px 0 0.5px #000,0 4px 0.5px #000,0 -4px 0.5px #000;
+}
+
+.card .attack{ left: 67px; top: 509px;  }
+.card .defense{ left: 350px; top: 509px;  }
+.card .cost{ left: 63px; top: 78px;  }
+.HeroPower .cost{ left: 193px; top: 48px; }
