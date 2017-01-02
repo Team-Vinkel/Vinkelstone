@@ -16,7 +16,6 @@ import { Component, OnInit, AfterViewInit, trigger, state, animate, transition, 
 export class HomeComponent implements OnInit, AfterViewInit {
 
   @Input() isVisible: boolean = false;
-  visibility = 'hidden';
   public innKeeperMessage: string;
 
   constructor() { }
