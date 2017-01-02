@@ -6,8 +6,6 @@ import { deckBuilderRoutes } from './deck-builder/deck-builder-routes';
 import { profilesRoutes } from './profiles/profiles-routes';
 
 import { HomeComponent } from './home/home.component';
-import { DecksUserComponent } from './deck-builder/decks-user/decks-user.component';
-import { CardsUserComponent } from './cards/cards-user/cards-user.component';
 import { FaqComponent} from './faq/faq.component';
 import { AboutComponent} from './about/about.component';
 
