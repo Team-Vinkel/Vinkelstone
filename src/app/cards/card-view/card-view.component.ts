@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
 import { CardService } from './../shared/card.service';
 import { ICard } from '../shared/card';
@@ -11,9 +12,11 @@ import { ICard } from '../shared/card';
 export class CardViewComponent implements OnInit {
 
   public card: ICard;
+  public imageStyle: SafeStyle;
 
   constructor(
     private _cardService: CardService,
+    private _sanitization: DomSanitizer,
     private _activatedRoute: ActivatedRoute
   ) { }
 
@@ -28,6 +31,7 @@ export class CardViewComponent implements OnInit {
         res => {
           if (res.length > 0) {
             [ this.card ] = res;
+            this.imageStyle = this._sanitization.bypassSecurityTrustStyle(`url(${this.card.pictureUrl})`);
             console.log(this.card);
           } else {
             // Error handling
