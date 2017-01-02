@@ -4,14 +4,14 @@
         <div class="cardbg bg2" [style.background-image]="imageStyle" style="background-size: auto 256px; background-repeat:no-repeat;"></div>
         <div class="cardbg bg3" [style.background-image]="imageStyle" style="background-size: auto 256px; background-repeat:no-repeat;"></div>
         <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Minion-Neutral.png')"></div>
-        <svg class="textsvg">
-      <defs>
-        <path d="m60,339 c57,7 205,-47 290,-10" id="pathMinion"></path>
-      </defs>
-      <text>
-        <textPath startOffset="50%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pathMinion" id="cardname-Minion">{{card.name}}</textPath>
-      </text>
-    </svg>
+        <svg:svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textsvg">
+            <svg:defs>
+                <svg:path d="m60,339 c57,7 205,-47 290,-10" id="pathMinion"></svg:path>
+            </svg:defs>
+            <svg:text>
+                <svg:textPath startOffset="50%" attr.xlink:href="/cards/{{card._id}}#pathMinion" id="cardname-Minion">{{card.name}}</svg:textPath>
+            </svg:text>
+        </svg:svg>
         <div class="cardtext" style="font-size: 24px;" [innerHTML]="card.description | markdownBold | markdownCursive"></div>
         <div class="cardno attack">{{card.attack}}</div>
         <div class="cardno defense">{{card.health}}</div>
@@ -20,28 +20,26 @@
     <div class="card Spell" *ngSwitchCase="'Spell'">
         <div class="cardbg bg1" [style.background-image]="imageStyle" style="background-size: 280px auto; background-repeat:no-repeat; background-position: center;"></div>
         <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Spell-Neutral.png')"></div>
-        <svg class="textsvg">
-      <defs>
-        <path d="m43,348 c80,-55 253,-50 318,-4" id="pathSpell"></path>
-      </defs>
-      <text>
-        <textPath startOffset="50%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pathSpell" id="cardname-Spell">{{card.name}}</textPath>
-      </text>
-    </svg>
+        <svg:svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textsvg">
+            <svg:defs>
+                <svg:path d="m43,348 c80,-55 253,-50 318,-4" id="pathSpell"></svg:path>
+            </svg:defs>
+            <svg:text>
+                <svg:textPath startOffset="50%" attr.xlink:href="/cards/{{card._id}}#pathSpell" id="cardname-Spell">{{card.name}}</svg:textPath>
+            </svg:text>
+        </svg:svg>
         <div class="cardtext" style="font-size: 24px;" [innerHTML]="card.description | markdownBold | markdownCursive"></div>
         <div class="cardno cost">{{card.manaCost}}</div>
     </div>
     <div class="card Weapon" *ngSwitchCase="'Weapon'">
         <div class="cardbg bg1" [style.background-image]="imageStyle" style="background-size: 320px 300px; background-repeat:no-repeat; background-position: center;"></div>
         <div class="cardfg" style="background-image: url('../../../assets/images/card-types/Weapon-Neutral.png')"></div>
-        <svg class="textsvg">
-      <defs>
-        <path d="m45,314 l323,0" id="pathWeapon"></path>
-      </defs>
-      <text>
-        <textPath startOffset="50%" xlink:href="#pathWeapon" id="cardname-Spell">{{card.name}}</textPath>
-      </text>
-    </svg>
+        <svg:svg xmlns="http://www.w3.org/2000/svg" class="textsvg">
+            <svg:path d="m45,314 l323,0" id="pathWeapon"></svg:path>
+            <svg:text>
+                <svg:textPath startOffset="50%" attr.xlink:href="/cards/{{card._id}}#pathWeapon" id="cardname-Spell">{{card.name}}</svg:textPath>
+            </svg:text>
+        </svg:svg>
         <div class="cardtext" [innerHTML]="card.description | markdownBold | markdownCursive"></div>
         <div class="cardno attack">{{card.attack}}</div>
         <div class="cardno defense">{{card.health}}</div>
@@ -50,14 +48,14 @@
     <div class="card HeroPower" *ngSwitchCase="'HeroPower'">
         <div class="cardbg bg1" [style.background-image]="imageStyle" style="background-size: 159px 149px; background-repeat:no-repeat; background-position: center;"></div>
         <div class="cardfg" style="background-image: url('../../../assets/images/card-types/HeroPower-Neutral.png')"></div>
-        <svg class="textsvg">
-      <defs>
-        <path d="m35,286 l323,0" id="HeroPower"></path>
-      </defs>
-      <text>
-        <textPath startOffset="50%" xlink:href="#HeroPower" id="cardname-HeroPower">{{card.name}}</textPath>
-      </text>
-    </svg>
+        <svg:svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textsvg">
+            <svg:defs>
+                <svg:path d="m35,286 l323,0" id="HeroPower"></svg:path>
+            </svg:defs>
+            <svg:text>
+                <svg:textPath startOffset="50%" attr.xlink:href="/cards/{{card._id}}#HeroPower" id="cardname-HeroPower">{{card.name}}</svg:textPath>
+            </svg:text>
+        </svg:svg>
         <div class="cardtext" style="font-size: 24px;"><b>Hero Power</b><br><span [innerHTML]="card.description | markdownBold | markdownCursive"></span></div>
         <div class="cardno cost">{{card.manaCost}}</div>
     </div>
