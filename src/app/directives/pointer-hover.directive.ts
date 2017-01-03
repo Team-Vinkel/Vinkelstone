@@ -13,6 +13,7 @@ export class PointerHoverDirective {
   private _oldPictureUrl: string;
 
   constructor(private _element: ElementRef) {
+    console.log('HERE');
     this._element.nativeElement.style.cursor = this._getRandomPointerStyle();
   }
 
@@ -22,6 +23,10 @@ export class PointerHoverDirective {
     }
 
     let random = getRandomInt(0, CURSOR_STYLES.length - 1);
-    return `url(${CURSOR_STYLES[random]})`;
+    let cursor = CURSOR_STYLES[random];
+    if (!cursor.includes('www')){
+      return cursor;
+    }
+    return `url(${cursor}),auto`;
   }
 }
