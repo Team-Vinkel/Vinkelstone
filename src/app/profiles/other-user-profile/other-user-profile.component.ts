@@ -19,6 +19,8 @@ export class OtherUserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = {};
+
     this._activatedRoute.params
       .concatMap(res => {
         let username = res['username'];
@@ -41,5 +43,4 @@ export class OtherUserProfileComponent implements OnInit {
         }
       );
   }
-
 }
