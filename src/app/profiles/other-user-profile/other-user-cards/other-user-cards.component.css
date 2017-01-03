@@ -1,0 +1,15 @@
+.card-image {
+    height: 200px;
+}
+
+.cards-list {
+    overflow: hidden
+}
+
+#description {
+    height: 60px;
+}
+
+.thumbnail {
+    height: 570px;
+}
