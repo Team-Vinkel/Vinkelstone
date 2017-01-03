@@ -104,7 +104,8 @@ export class AuthService {
         let hashedPassword = Crypto.encryptToSha1(user.password);
         let formattedUser: IUser = {
             username: user.username,
-            password: hashedPassword
+            password: hashedPassword,
+            profilePictureUrl: user.profilePictureUrl
         };
         return formattedUser;
     }
