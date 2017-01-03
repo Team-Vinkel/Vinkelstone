@@ -24,7 +24,7 @@ export class PointerHoverDirective {
 
     let random = getRandomInt(0, CURSOR_STYLES.length - 1);
     let cursor = CURSOR_STYLES[random];
-    if (!cursor.includes('www')){
+    if (!cursor.includes('www')) {
       return cursor;
     }
     return `url(${cursor}),auto`;
