@@ -18,8 +18,6 @@ export class OtherUserCardsComponent implements OnInit {
   constructor(private _cardService: CardService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.cards = [];
-
     this._activatedRoute.params
       .concatMap(res => {
         let username = res['username'];

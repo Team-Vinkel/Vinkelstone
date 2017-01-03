@@ -12,6 +12,7 @@ import { IDeck } from '../../../deck-builder/shared/deck';
 })
 export class DecksUserComponent implements OnInit {
   public decks: IDeck[];
+  public error: string;
 
   constructor(
     private _deckBuilderService: DeckBuilderService,
@@ -20,8 +21,6 @@ export class DecksUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.decks = [];
-
     this._listCurrentUserDecks();
   }
 
@@ -30,7 +29,17 @@ export class DecksUserComponent implements OnInit {
 
     this._deckBuilderService.getDecksByUser(currentUser)
       .subscribe(
-        res => this.decks = res
+        res => {
+          if (res._body) {
+            this.error = 'No decks to show';
+          } else {
+            if (res.length < 1) {
+              this.error = 'No decks to show';
+            } else {
+              this.decks = res;
+            }
+          }
+        }
       );
   }
 }

@@ -19,8 +19,6 @@ export class OtherUserDecksComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.decks = [];
-
     this._activatedRoute.params
       .concatMap(res => {
         let username = res['username'];
