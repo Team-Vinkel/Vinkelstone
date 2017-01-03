@@ -22,10 +22,10 @@ export class DeckHoverDirective {
 
   constructor(private _element: ElementRef) {
     this._cardBackUrl = this._getRandomCardBack();
-    this._oldPictureUrl = this._element.nativeElement.src.substr(0);
   }
 
   @HostListener('mouseenter') onMouseEnter() {
+    this._oldPictureUrl = this._element.nativeElement.src.substr(0);
     this._element.nativeElement.src = this._cardBackUrl;
   }
 

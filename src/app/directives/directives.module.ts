@@ -9,7 +9,7 @@ import { DeckHoverDirective } from './deck-hover.directive';
   imports: [
     CommonModule
   ],
-  declarations: [CardHighlightDirective, PointerHoverDirective, DeckHoverDirective],
-  exports: [ CardHighlightDirective, PointerHoverDirective ]
+  declarations: [ CardHighlightDirective, PointerHoverDirective, DeckHoverDirective ],
+  exports: [ CardHighlightDirective, PointerHoverDirective, DeckHoverDirective ]
 })
 export class DirectivesModule { }
