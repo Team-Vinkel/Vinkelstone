@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { CardHighlightDirective } from './card-highlight.directive';
 import { PointerHoverDirective } from './pointer-hover.directive';
+import { DeckHoverDirective } from './deck-hover.directive';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [CardHighlightDirective, PointerHoverDirective],
+  declarations: [CardHighlightDirective, PointerHoverDirective, DeckHoverDirective],
   exports: [ CardHighlightDirective, PointerHoverDirective ]
 })
 export class DirectivesModule { }
