@@ -1,8 +1,8 @@
 # VinkelStone - A Hearthstone: Heroes of Warcraft fan site 
-<img src="http://cdn1.blizzard.gamespress.com/propressroom/Content/Artwork/Eva/BlizzardLive/artwork/2013/10/pv3-20131018171313/Hearthstone%20Logo.png" width="300px"/>
+<img src="https://s3.amazonaws.com/battlefy-user-generated-assets/users/56b67b58e890bb0c0301589b/56b68b9a1fab390803cec20c.png" width="300px"/>
 ## A project by Team Vinkel
- 
-We have used our whole javascript skillset to deliver a well-engineered project by following the best practices in the MVC architectural pattern.
+Welcome to our creation - Vinkelstone!
+Here you can create Hearthstone-themed cards and decks, search and look at other users' profiles. You can also view their cards and decks. We have provided you with a responsive and modern interface so that you can feel yourself at home, or at the Hearthstone tavern(if you are homeless :D)
 
 ## Authors
 |       Name     | http://telerikacademy.com profile                           |https://github.com profile                   |
@@ -17,5 +17,5 @@ We have used our whole javascript skillset to deliver a well-engineered project 
 **2.** starting the project is as easy as runnning **npm start**
 
 ---------------------------------------------------------------------------------------------------------------------------------
-**The project is licensed under the GPLv3 License**
+**The project is licensed under the MIT License**
 
