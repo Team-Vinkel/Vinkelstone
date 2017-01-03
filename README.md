@@ -33,3 +33,8 @@ Here you can create Hearthstone-themed cards and decks, search and look at other
 ---------------------------------------------------------------------------------------------------------------------------------
 **The project is licensed under the MIT License**
 
+[The project is being hosted here.](https://vinkelstone.firebaseapp.com)
+
+[YouTube presentation video]( https://www.youtube.com/watch?v=geudQq_CEpI&feature=youtu.be)
+
+[Telerik Academy showcase system link](http://best.telerikacademy.com/projects/428/VinkelStone-A-Hearthstone-Heroes-of-Warcraft-fan-site)
