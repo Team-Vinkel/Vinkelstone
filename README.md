@@ -14,7 +14,8 @@ Here you can create Hearthstone-themed cards and decks, search and look at other
 ### Setup instructions
 **1.** npm install
 
-**2.** starting the project is as easy as runnning **npm start**
+**2.** starting the project is as easy as runnning **npm start** **(might work only on linux)**
+  - for windows run **npm install -g angular-cli** then **ng serve**
 
 ##### Authenticated users can: 
 - View their own profiles, cards and decks
