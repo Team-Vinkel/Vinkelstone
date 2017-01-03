@@ -1,68 +1,74 @@
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-            <a class="navbar-brand" routerLink="/home">Vinkelstone</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a routerLink="/cards">Cards</a></li>
-                <li><a routerLink="/decks">Decks</a></li>
-                <li class="dropdown" *ngIf="isUserLoggedIn">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Create a card<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'minion'}}]">Minion</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'spell'}}]">Spell</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'weapon'}}]">Weapon</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'hero-power'}}]">Hero power</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a routerLink="/deck-create" *ngIf="isUserLoggedIn">Create a deck</a></li>
-                <li><a routerLink="/faq">FAQ</a></li>
-                <li><a routerLink="/about">About</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown" *ngIf="!isUserLoggedIn">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Sign in/Sign up<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a routerLink="/sign-in">Sign in</a>
-                        </li>
-                        <li>
-                            <a routerLink="/sign-up">Sign up</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown" *ngIf="isUserLoggedIn">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">{{username}}<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a routerLink="/home" (click)="logout()">Logout</a>
-                        </li>
-                        <li>
-                            <a routerLink="/profile/decks">View my decks</a>
-                        </li>
-                        <li>
-                            <a routerLink="/profile/cards">View my cards</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" routerLink="/home">Vinkelstone</a>
     </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/cards">Cards</a></li>
+        <li><a routerLink="/decks">Decks</a></li>
+        <li class="dropdown" *ngIf="isUserLoggedIn">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Create a card<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'minion'}}]">Minion</a>
+            </li>
+            <li>
+              <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'spell'}}]">Spell</a>
+            </li>
+            <li>
+              <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'weapon'}}]">Weapon</a>
+            </li>
+            <li>
+              <a [routerLink]="['/create-card', { outlets: { cardCreatorForm: 'hero-power'}}]">Hero power</a>
+            </li>
+          </ul>
+        </li>
+        <li><a routerLink="/deck-create" *ngIf="isUserLoggedIn">Create a deck</a></li>
+        <li><a routerLink="/faq">FAQ</a></li>
+        <li><a routerLink="/about">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form *ngIf="isUserLoggedIn" class="navbar-form navbar-left">
+          <div class="form-group">
+            <input name="name-search" [(ngModel)]="userToFind" type="text" class="form-control" placeholder="Search users">
+          </div>
+          <button type="submit" class="btn btn-default" (click)="searchUser()">Search</button>
+        </form>
+        <li class="dropdown" *ngIf="!isUserLoggedIn">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Sign in/Sign up<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a routerLink="/sign-in">Sign in</a>
+            </li>
+            <li>
+              <a routerLink="/sign-up">Sign up</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown" *ngIf="isUserLoggedIn">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">{{username}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a routerLink="/home" (click)="logout()">Logout</a>
+            </li>
+            <li>
+              <a routerLink="/profile/decks">View my decks</a>
+            </li>
+            <li>
+              <a routerLink="/profile/cards">View my cards</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <simple-notifications [options]="notificationOptions"></simple-notifications>
 <router-outlet></router-outlet>

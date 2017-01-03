@@ -1,0 +1,11 @@
+<h1 *ngIf="!usersResult.length">No users match this pattern!</h1>
+<div *ngIf="usersResult.length">
+  <h1>Users that match the given pattern:</h1>
+  <ul class="list-group">
+    <li *ngFor="let user of usersResult" class="list-group-item">
+      <h3>
+        <a routerLink="/users/{{user.username}}">{{user.username}}</a>
+      </h3>
+    </li>
+  </ul>
+</div>
