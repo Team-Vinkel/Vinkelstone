@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { MarkdownCursivePipe } from './markdown-cursive.pipe';
 import { MarkdownBoldPipe } from './markdown-bold.pipe';
+import { WordfilterPipe } from './wordfilter.pipe';
 
 @NgModule({
   imports: [
@@ -12,11 +13,13 @@ import { MarkdownBoldPipe } from './markdown-bold.pipe';
   ],
   declarations: [
     MarkdownBoldPipe,
-    MarkdownCursivePipe
+    MarkdownCursivePipe,
+    WordfilterPipe
   ],
   exports: [
     MarkdownBoldPipe,
-    MarkdownCursivePipe
+    MarkdownCursivePipe,
+    WordfilterPipe
   ]
 })
 export class PipesModule { }
