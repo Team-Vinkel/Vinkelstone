@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IUser } from '../auth/shared/user';
 
 import { UserService } from '../profiles/shared/users.service'
+import { NotificationsService } from 'angular2-notifications'
 
 @Component({
   selector: 'app-search-user',
@@ -14,7 +15,10 @@ import { UserService } from '../profiles/shared/users.service'
 export class SearchUserComponent implements OnInit {
   public usersResult: IUser[];
 
-  constructor(private _route: ActivatedRoute, private _userService: UserService) {
+  constructor(
+    private _route: ActivatedRoute,
+    private _userService: UserService,
+    private _notificationService: NotificationsService) {
   }
 
   ngOnInit() {
@@ -32,6 +36,8 @@ export class SearchUserComponent implements OnInit {
       .subscribe(res => {
         this.usersResult = res;
       },
-      err => console.log(err));
+      err => this._notificationService.error(
+        'User search error',
+        'An error occured when searching for users!'));
   }
 }
