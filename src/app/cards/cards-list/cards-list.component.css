@@ -1,15 +1,20 @@
 .card-image {
-    height: 200px;
+  height: 200px;
 }
 
 .cards-list {
-    overflow: hidden
+  overflow: hidden
 }
 
 #description {
-    height: 60px;
+  height: 50px;
+  width: 80%;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .thumbnail {
-    height: 530px;
+  height: 550px;
 }
