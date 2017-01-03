@@ -16,6 +16,8 @@ export class UserOwnProfileComponent implements OnInit {
   constructor(private _userService: UserService) { }
 
   ngOnInit() {
+    this.user = {};
+
     this._userService.getCurrentUser()
       .subscribe(
         res => {
@@ -23,6 +25,9 @@ export class UserOwnProfileComponent implements OnInit {
             this.error = 'An error occured while fetching your info';
           } else {
             this.user = res;
+             if (!this.user.profilePictureUrl) {
+                this.user.profilePictureUrl = 'http://www.vacul.org/extension/site/design/site//images/anonymous-user.png';
+              }
           }
         }
       );
