@@ -15,4 +15,14 @@ export class UserService {
 
     return this._kinveyService.getUsersByFilter(JSON.stringify(filter));
   }
+
+  public getUserByPartialaName(pattern: string) {
+    let filter = {
+      username: {
+        $regex: `^(?i)${pattern}`
+      }
+    };
+
+    return this._kinveyService.getUsersByFilter(JSON.stringify(filter));
+  }
 }

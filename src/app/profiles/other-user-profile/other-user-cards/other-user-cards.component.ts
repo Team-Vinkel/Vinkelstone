@@ -12,6 +12,7 @@ import { ICard } from './../../../cards/shared/card';
 })
 export class OtherUserCardsComponent implements OnInit {
   public cards: ICard[];
+
   public error: string;
   constructor(private _cardService: CardService, private _activatedRoute: ActivatedRoute) { }
 

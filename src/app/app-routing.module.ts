@@ -15,6 +15,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { UserIsLoggedGuard } from './shared/route-guard/is-logged-guard';
 import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
 
+import { SearchUserComponent } from './search-user/search-user.component';
+
 const appRoutes: Routes = [
     {
         path: 'home',
@@ -23,6 +25,10 @@ const appRoutes: Routes = [
     ...deckBuilderRoutes,
     ...cardsRoutes,
     ...profilesRoutes,
+    {
+        path: 'search/:pattern',
+        component: SearchUserComponent
+    },
     {
         path: 'sign-up',
         canActivate: [ UserIsNotLoggedGuard ],

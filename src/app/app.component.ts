@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
 
@@ -14,10 +15,12 @@ export class AppComponent implements OnInit {
   public isUserLoggedIn: boolean;
   public username: string;
   public notificationOptions;
+  public userToFind: string;
 
   constructor(
     private _authService: AuthService,
-    private _notificationService: NotificationsService) {
+    private _notificationService: NotificationsService,
+    private _router: Router) {
   }
 
   ngOnInit() {
@@ -41,8 +44,12 @@ export class AppComponent implements OnInit {
     this._authService.checkUserLogIn();
   }
 
+  searchUser() {
+    this._router.navigate([`/search/${this.userToFind}`])
+  }
+
   logout() {
-    this._notificationService.error('Logout success', 'Logged out successfuly!');
+    this._notificationService.success('Logout success', 'Logged out successfuly!');
     this._authService.logoutUser();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { CardService } from '../../cards/shared/card.service';
 import { DeckBuilderService } from '../shared/deck-builder.service';
