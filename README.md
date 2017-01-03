@@ -16,6 +16,20 @@ Here you can create Hearthstone-themed cards and decks, search and look at other
 
 **2.** starting the project is as easy as runnning **npm start**
 
+##### Authenticated users can: 
+- View their own profiles, cards and decks
+- Create cards and decks
+- Log out
+- Search for other users
+- View other users' profiles, cards and decks
+
+##### Not authenticated users can:
+- View home, faq and about page
+- Log in
+- Register
+- View all cards
+- View all decks
+
 ---------------------------------------------------------------------------------------------------------------------------------
 **The project is licensed under the MIT License**
 

@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { IUser } from '../auth/shared/user';
 
-import { UserService } from '../profiles/shared/users.service'
-import { NotificationsService } from 'angular2-notifications'
+import { UserService } from '../profiles/shared/users.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-search-user',
@@ -31,7 +31,7 @@ export class SearchUserComponent implements OnInit {
     this._route.params
       .concatMap(params => {
         let userToFind = params['pattern'];
-        return this._userService.getUserByPartialaName(userToFind)
+        return this._userService.getUserByPartialName(userToFind);
       })
       .subscribe(res => {
         this.usersResult = res;
