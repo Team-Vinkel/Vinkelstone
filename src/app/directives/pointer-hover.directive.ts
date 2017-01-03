@@ -10,10 +10,7 @@ const CURSOR_STYLES = [
 })
 export class PointerHoverDirective {
 
-  private _oldPictureUrl: string;
-
   constructor(private _element: ElementRef) {
-    console.log('HERE');
     this._element.nativeElement.style.cursor = this._getRandomPointerStyle();
   }
 
