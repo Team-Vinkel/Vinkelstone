@@ -95,6 +95,11 @@ export class AuthService {
         return result;
     }
 
+    public getCurrentAuthToken() {
+        let result = JSON.parse(localStorage.getItem('user')).authtoken;
+        return result;
+    }
+
     private formatUserData(user: IUser) {
         let hashedPassword = Crypto.encryptToSha1(user.password);
         let formattedUser: IUser = {
