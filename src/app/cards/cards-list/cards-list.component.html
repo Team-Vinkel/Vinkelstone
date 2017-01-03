@@ -3,7 +3,7 @@
         <h1>Available cards:</h1>
         <div class="col-md-4 cards-list" *ngFor="let card of cards">
             <div class="thumbnail">
-                <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
+                <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}" appCardHighlight>
                 <div class="caption">
                     <h3>{{card.name}}</h3>
                     <h4>Type: {{card.type}}</h4>
@@ -28,7 +28,7 @@
         <h1 *ngIf="cardsForDeck.length">Cards for deck:</h1>
         <div class="col-md-4 cards-list" *ngFor="let card of cardsForDeck">
             <div class="thumbnail">
-                <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}">
+                <img class="card-image" src="{{card.pictureUrl}}" alt="{{card.name}}" appCardHighlight>
                 <div class="caption">
                     <h3>{{card.name}}</h3>
                     <h4>Type: {{card.type}}</h4>

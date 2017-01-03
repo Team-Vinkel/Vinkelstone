@@ -26,6 +26,8 @@ import { DeckBuilderModule } from './deck-builder/deck-builder.module';
 import { ProfilesModule } from './profiles/profiles.module';
 
 import { PipesModule } from './pipes/pipes.module';
+import { DirectivesModule } from './directives/directives.module';
+
 import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
 
@@ -47,6 +49,7 @@ import { AboutComponent } from './about/about.component';
         DeckBuilderModule,
         ProfilesModule,
         PipesModule,
+        DirectivesModule,
         SimpleNotificationsModule
     ],
     providers: [
