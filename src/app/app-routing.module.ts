@@ -27,6 +27,7 @@ const appRoutes: Routes = [
     ...profilesRoutes,
     {
         path: 'search/:pattern',
+        canActivate: [ UserIsNotLoggedGuard ],
         component: SearchUserComponent
     },
     {

@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate } from '@angular/router';
 
 import { AuthService } from './../../auth/auth.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Injectable()
 export class UserIsNotLoggedGuard implements CanActivate {
     private _isUserLoggedIn: boolean;
 
-    constructor(private _authService: AuthService, private _router: Router) {
+    constructor(
+        private _authService: AuthService,
+        private _notificationService: NotificationsService) {
         this._authService.isUserLoggedIn.subscribe(
             res => {
                 this._isUserLoggedIn = res;
@@ -24,7 +27,7 @@ export class UserIsNotLoggedGuard implements CanActivate {
                     if (!this._isUserLoggedIn) {
                         return true;
                     } else {
-                        this._router.navigate(['/home']);
+                        this._notificationService.error('Unauthorized!', 'You are not logged in!')
                         return false;
                     }
                 }
