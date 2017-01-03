@@ -5,6 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
+    "heroku-prebuild": "npm install angular-cli",
     "start": "./node_modules/angular-cli/bin/ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
