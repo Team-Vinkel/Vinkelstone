@@ -36,7 +36,6 @@ export class OtherUserDecksComponent implements OnInit {
               this.error = 'No decks to show';
             } else {
               this.decks = res;
-              console.log(this.decks);
             }
           }
         }

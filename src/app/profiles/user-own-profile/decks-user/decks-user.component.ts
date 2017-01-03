@@ -30,8 +30,7 @@ export class DecksUserComponent implements OnInit {
 
     this._deckBuilderService.getDecksByUser(currentUser)
       .subscribe(
-        res => this.decks = res,
-        err => console.log(err)
+        res => this.decks = res
       );
   }
 }

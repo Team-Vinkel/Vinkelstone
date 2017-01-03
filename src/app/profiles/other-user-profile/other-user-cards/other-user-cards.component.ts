@@ -35,7 +35,6 @@ export class OtherUserCardsComponent implements OnInit {
               this.error = 'No cards to show';
             } else {
               this.cards = res;
-              console.log(this.cards);
             }
           }
         }

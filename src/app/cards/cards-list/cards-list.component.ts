@@ -52,8 +52,7 @@ export class CardsListComponent implements OnInit {
   ngOnInit() {
     this._authService.isUserLoggedIn
       .subscribe(
-      res => this.userLoggedIn = res,
-      err => console.log(err)
+      res => this.userLoggedIn = res
       );
 
     this._authService.checkUserLogIn();
@@ -65,8 +64,7 @@ export class CardsListComponent implements OnInit {
     this._cardService
       .getAllCards()
       .subscribe(
-      res => this.cards = res,
-      err => console.log(err)
+      res => this.cards = res
       );
   }
 

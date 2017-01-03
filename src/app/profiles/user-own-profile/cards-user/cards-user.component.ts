@@ -30,8 +30,7 @@ export class CardsUserComponent implements OnInit {
   private _listCurrentUserCards() {
     this._cardService.getCardsByUser(this.currentUser)
       .subscribe(
-        res => this.cards = res,
-        err => console.log(err)
+        res => this.cards = res
       );
   }
 }

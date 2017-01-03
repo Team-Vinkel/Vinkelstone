@@ -47,8 +47,7 @@ export class DeckViewComponent implements OnInit {
             }
           }
         }
-      },
-      err => console.log(err)
+      }
       );
   }
 }
