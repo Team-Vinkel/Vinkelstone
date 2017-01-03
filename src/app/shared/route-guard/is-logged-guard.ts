@@ -28,7 +28,7 @@ export class UserIsLoggedGuard implements CanActivate {
                     if (this._isUserLoggedIn) {
                         return true;
                     } else {
-                        this._notificationService.error('Unauthorized!', 'You are not logged in!')
+                        this._notificationService.error('Unauthorized!', 'You are not logged in!');
                         return false;
                     }
                 }

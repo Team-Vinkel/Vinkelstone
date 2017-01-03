@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { IUser } from '../auth/shared/user';
+import { IUser } from '../../auth/shared/user';
 
-import { UserService } from '../profiles/shared/users.service';
+import { UserService } from '../../profiles/shared/users.service';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({

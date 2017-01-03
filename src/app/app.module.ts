@@ -16,29 +16,22 @@ import { UserIsLoggedGuard } from './shared/route-guard/is-logged-guard';
 import { UserIsNotLoggedGuard } from './shared/route-guard/is-not-logged-guard';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-import { AppRoutingModule } from './app-routing.module';
 
 import { AuthModule } from './auth/auth.module';
 import { CardsModule } from './cards/cards.module';
 import { DeckBuilderModule } from './deck-builder/deck-builder.module';
 import { ProfilesModule } from './profiles/profiles.module';
+import { SearchModule } from './search/search.module';
+import { HomeModule } from './home/home.module';
+import { InfoModule } from './info/info.module';
 
+import { AppRoutingModule } from './app-routing.module';
 import { PipesModule } from './pipes/pipes.module';
 import { DirectivesModule } from './directives/directives.module';
-
-import { FaqComponent } from './faq/faq.component';
-import { AboutComponent } from './about/about.component';
-import { SearchUserComponent } from './search-user/search-user.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        FaqComponent,
-        AboutComponent,
-        SearchUserComponent
     ],
     imports: [
         BrowserModule,
@@ -50,6 +43,9 @@ import { SearchUserComponent } from './search-user/search-user.component';
         CardsModule,
         DeckBuilderModule,
         ProfilesModule,
+        SearchModule,
+        HomeModule,
+        InfoModule,
         PipesModule,
         DirectivesModule,
         SimpleNotificationsModule

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
 
-import { NotificationsService } from 'angular2-notifications'
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-root',
@@ -25,13 +25,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.notificationOptions = {
-      position: ["top", "right"],
+      position: ['top', 'right'],
       timeOut: 3500,
       lastOnBottom: true,
-      animate: "fromRight",
+      animate: 'fromRight',
       preventDuplicates: true,
       pauseOnHover: false
-    }
+    };
 
     this._authService.isUserLoggedIn.subscribe(
       res => {
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   }
 
   searchUser() {
-    this._router.navigate([`/search/${this.userToFind}`])
+    this._router.navigate([`/search/${this.userToFind}`]);
   }
 
   logout() {

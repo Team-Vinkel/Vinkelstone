@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { NotificationsService } from 'angular2-notifications'
+import { NotificationsService } from 'angular2-notifications';
 
 import { DeckBuilderService } from '../shared/deck-builder.service';
 import { CardService } from '../../cards/shared/card.service';
@@ -31,7 +31,7 @@ export class CreateDeckComponent implements OnInit {
   ngOnInit() {
     let cardIds: string[] = [];
     this._deckBuilderService.getCardsForDeck()
-      .forEach(x => cardIds.push(x._id))
+      .forEach(x => cardIds.push(x._id));
 
     this.deck = {
       creator: this._authService.getCurrentUsername(),

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { PipesModule } from '../../app/pipes/pipes.module'
+import { PipesModule } from '../../app/pipes/pipes.module';
 import { DirectivesModule } from '../directives/directives.module';
 
 import { DeckBuilderComponent } from './deck-builder.component';

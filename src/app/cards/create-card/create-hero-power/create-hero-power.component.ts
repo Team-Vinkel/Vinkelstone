@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { NotificationsService } from 'angular2-notifications'
+import { NotificationsService } from 'angular2-notifications';
 
 import { CardService } from '../../shared/card.service';
 import { AuthService } from '../../../auth/auth.service';
@@ -37,13 +37,13 @@ export class CreateHeroPowerComponent implements OnInit {
       .subscribe(
       res => {
         if (res._body) {
-          this._notificationService.error("Card creation", "Error occured while creating your card!")
+          this._notificationService.error('Card creation', 'Error occured while creating your card!');
         } else {
-          this._notificationService.success("Card creation", "Card successfuly created!")
+          this._notificationService.success('Card creation', 'Card successfuly created!');
           setTimeout(() => this._router.navigate([`/cards/${res._id}`]), 2000);
         }
       },
-      err => this._notificationService.error("Card creation", "Error occured while creating your card!")
+      err => this._notificationService.error('Card creation', 'Error occured while creating your card!')
       );
   }
 
