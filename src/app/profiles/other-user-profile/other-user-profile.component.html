@@ -1,9 +1,13 @@
-<div class="container">
-    <div *ngIf="user">
-        <p>{{user.username}}'s profile</p>
-        <img src="{{user.profilePictureUrl}}" alt="{{user.username}}'s profile picture" />
+<div class="row">
+  <div class="col-md-6 profile">
+    <h1>{{user.username}}'s profile</h1>
+    <h2 *ngIf="error">{{error}}</h2>
+    <div class="thumbnail">
+      <img src="{{user.profilePictureUrl}}" alt="{{user.username}}'s profile picture" />
+      <div class="caption">
         <a class="btn btn-default" role="button" routerLink="/users/{{user.username}}/decks">View {{user.username}}'s decks</a>
         <a class="btn btn-default" role="button" routerLink="/users/{{user.username}}/cards">View {{user.username}}'s cards</a>
+      </div>
     </div>
-    <h2 *ngIf="error">{{error}}</h2>
+  </div>
 </div>

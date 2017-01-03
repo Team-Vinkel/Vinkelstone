@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
       timeOut: 3500,
       lastOnBottom: true,
       animate: "fromRight",
-      preventDuplicates: true
+      preventDuplicates: true,
+      pauseOnHover: false
     }
 
     this._authService.isUserLoggedIn.subscribe(
