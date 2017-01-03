@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { PipesModule } from '../../app/pipes/pipes.module'
+import { DirectivesModule } from '../directives/directives.module';
 
 import { DeckBuilderComponent } from './deck-builder.component';
 import { DeckViewComponent } from './deck-view/deck-view.component';
@@ -16,8 +17,13 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
     RouterModule,
     BrowserModule,
     FormsModule,
-    PipesModule
+    PipesModule,
+    DirectivesModule
   ],
-  declarations: [ CreateDeckComponent, DeckViewComponent, DeckBuilderComponent ]
+  declarations: [
+    CreateDeckComponent,
+    DeckViewComponent,
+    DeckBuilderComponent
+  ]
 })
 export class DeckBuilderModule { }

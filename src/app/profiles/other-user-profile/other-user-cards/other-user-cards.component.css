@@ -11,5 +11,9 @@
 }
 
 .thumbnail {
-    height: 570px;
+    height: 530px;
+}
+
+h1 {
+    text-align: center;
 }

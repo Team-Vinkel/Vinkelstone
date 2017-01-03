@@ -13,7 +13,10 @@ import { UserService } from './shared/users.service';
     UserOwnProfileModule
   ],
   declarations: [],
-  providers: [ UserService ],
-  exports: [ OtherUserProfileModule, UserOwnProfileModule ]
+  providers: [UserService],
+  exports: [
+    OtherUserProfileModule,
+    UserOwnProfileModule
+  ]
 })
 export class ProfilesModule { }

@@ -20,6 +20,8 @@ export class DecksUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.decks = [];
+
     this._listCurrentUserDecks();
   }
 

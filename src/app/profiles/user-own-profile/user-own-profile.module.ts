@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { PipesModule } from './../../pipes/pipes.module';
+import { DirectivesModule } from '../../directives/directives.module';
 
 import { DecksUserComponent } from './decks-user/decks-user.component';
 import { CardsUserComponent } from './cards-user/cards-user.component';
@@ -12,8 +13,13 @@ import { UserOwnProfileComponent } from './user-own-profile.component';
   imports: [
     CommonModule,
     PipesModule,
-    RouterModule
+    RouterModule,
+    DirectivesModule
   ],
-  declarations: [UserOwnProfileComponent, CardsUserComponent, DecksUserComponent]
+  declarations: [
+    UserOwnProfileComponent,
+    CardsUserComponent,
+    DecksUserComponent
+  ]
 })
 export class UserOwnProfileModule { }
