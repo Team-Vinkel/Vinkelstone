@@ -31,7 +31,7 @@ import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     imports: [
         BrowserModule,
